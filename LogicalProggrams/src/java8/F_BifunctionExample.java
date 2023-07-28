@@ -8,7 +8,8 @@ import java.util.function.Predicate;
 
 public class F_BifunctionExample {
 
-	static BiFunction<List<Student>, Predicate<Student>, Map<String, Double>> biFunction = ((students,
+	static BiFunction<List<Student>, Predicate<Student>, Map<String, Double>> biFunction 
+	= ((students,
 			studentsPredicate) -> {
 		Map<String, Double> studentGradeMap = new HashMap<>();
 

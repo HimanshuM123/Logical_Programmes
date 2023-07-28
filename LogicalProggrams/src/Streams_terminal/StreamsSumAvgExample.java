@@ -1,12 +1,14 @@
 package Streams_terminal;
 
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import java8.StudentDataBase;
 import java8.Student;
 
 public class StreamsSumAvgExample {
 
+	
 	public static int sum() {
 		return StudentDataBase.getAllStudents()
 		.stream()

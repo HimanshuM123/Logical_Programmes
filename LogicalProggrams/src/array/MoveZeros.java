@@ -4,14 +4,11 @@ import java.util.Arrays;
 
 public class MoveZeros {
 	public static void main(String[] args) {
-		int arr[] = { 1, 2, 0, 3 };
+		int arr[] = { 1,0,2, 0, 3 };
 		int count = 0;
 		for (int i = 0; i < arr.length; i++) {
-
 			if (arr[i] != 0) {
-				arr[count] = arr[i];
-				count++;
-
+				arr[count++] = arr[i];
 			}
 		}
 		
@@ -20,6 +17,7 @@ public class MoveZeros {
 		}
 		
 		System.out.print(Arrays.toString(arr));
+	
 
 	}
 

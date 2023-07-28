@@ -3,19 +3,18 @@ package myPkg;
 public class Palindrome {
 public static void main(String[] args) {
 	
-	String sampleString="madams";
+	String sampleString="madamr";
 	boolean flag=true;
 	
-	for(int i=0;i<=sampleString.length()-1;i++) {
+	for(int i=0;i<sampleString.length()/2;i++) {
 		if(sampleString.charAt(i)!=sampleString.charAt(sampleString.length()-1-i)) {
 			flag=false;
-			break;
 		}
 	}
 	if(flag) {
-		System.out.println("The string is palindrome");
+		System.out.println("String is Palimdom");
 	}else {
-		System.out.println("The string is not palindrome");
+		System.out.println("String is not Palimdrom");
 	}
 	
 }

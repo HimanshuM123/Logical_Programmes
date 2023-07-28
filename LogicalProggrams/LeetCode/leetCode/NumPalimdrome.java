@@ -8,15 +8,8 @@ class NumPalimdrome {
            int rem=x%10;
              rev = rem+rev*10;
             x=x/10;
-            
         }
-        if(num==rev){
-            return true;
-        }
-        else{
-            return false;
-        }
-   
+      return  num==rev ? true: false;
     }
     
     

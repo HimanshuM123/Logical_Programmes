@@ -12,8 +12,10 @@ public class StreamsFlatMapExample {
 public static List<String> printStudentActivities(){
 		
 		List<String> studentActivities=StudentDataBase.getAllStudents().stream()//Stream<List<Student>>
-				.map(Student::getActivities)//stream<List<String>>
-				.flatMap(List::stream)//Stream<String>>
+				//.map(Student::getActivities)//Stream<List<String>>
+				.map(x -> x.getActivities())
+				//.flatMap(List::stream)//Stream<String>>
+				.flatMap(y -> y.stream())
 				.distinct()
 				.sorted()
 				.collect(Collectors.toList());

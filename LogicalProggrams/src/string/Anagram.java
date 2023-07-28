@@ -18,7 +18,7 @@ public class Anagram {
 	
 	 static boolean isAnagram(String str1,StringBuffer str2) {
 		for(int i=0;i<=str1.length()-1;i++) {
-			int index=str2.indexOf(String.valueOf(str1.charAt(i)));
+			int index=str2.indexOf(""+str1.charAt(i));
 			if(index!=-1) {
 				str2.deleteCharAt(index);
 			}

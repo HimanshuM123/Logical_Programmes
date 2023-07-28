@@ -2,10 +2,10 @@ package myPkg;
 
 public class PalindromeNumber {
 	public static void main(String[] args) {
-		int number = 123321;
+		int number = 1233821;
 		int num = number;
 		int revNum = 0;
-
+		
 		while (num != 0) {
 			revNum = num % 10 + revNum * 10;
 			num = num / 10;
@@ -16,5 +16,4 @@ public class PalindromeNumber {
 			System.out.println("The number is not palindrome");
 		}
 	}
-
 }

@@ -13,6 +13,7 @@ public class FutureTest {
 		Future<Integer> future= executorService.submit(new Task());
 		
 		try {
+			System.out.println("Waiting for result");
 			Integer result=future.get();
 			System.out.println("Result is "+result);
 		} catch (InterruptedException e) {
