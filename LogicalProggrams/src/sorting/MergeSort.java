@@ -4,10 +4,12 @@ import java.util.Arrays;
 
 public class MergeSort {
 	public static void main(String[] args) {
-		int[] numbers = { 6,5,4,3,2,1 };
+		int[] numbers = { 6,5,34,3,7,1 };
 		MergeSort merge = new MergeSort();
 		merge.sort(numbers);
 		System.out.println(Arrays.toString((numbers)));
+		
+	
 	}
 
 	public void sort(int[] array) {
@@ -55,5 +57,6 @@ public class MergeSort {
 			result[k++] = right[j++];
 		}
 	}
+	
 
 }

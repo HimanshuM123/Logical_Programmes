@@ -29,7 +29,7 @@ public class CodingInterview {
 		List<Integer> list3 = Arrays.asList(3,6,6,7,3,8,9,8);
 		System.out.println("Duplicate Elements ->");
 		Set<Integer> set = new HashSet<Integer>();
-		List<Integer> result2 =list3.stream().filter(o -> !set.add(o)).collect(Collectors.toList());
+		List<Integer> result2 =list3.stream().filter(obj -> !set.add(obj)).collect(Collectors.toList());
 		result2.forEach(o -> System.out.print(o+" "));
 		
 		//Maximum number

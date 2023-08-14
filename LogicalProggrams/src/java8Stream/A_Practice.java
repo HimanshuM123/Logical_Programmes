@@ -16,7 +16,7 @@ public class A_Practice {
 	Optional<Integer> res= al.stream().min((a,b)-> a.compareTo(b));
 	//System.out.println(res.get());
 	
-	Integer sum = al.stream().reduce(0,(a,b)-> a-b);
+	Integer sum = al.stream().reduce(0,(a,b)-> a+b);
 	System.out.println(sum);
 	
 	

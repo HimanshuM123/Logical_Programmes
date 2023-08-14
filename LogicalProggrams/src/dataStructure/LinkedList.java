@@ -105,6 +105,14 @@ public class LinkedList {
 		}
 		return null;
 	}
+	
+	private static void printList(LinkedList list) {
+		Node n = list.first;
+		while(n!=null) {
+			System.out.println(n.value+" ");
+			n=n.next;
+		}
+	}
 
 	public static void main(String[] args) {
 		LinkedList list = new LinkedList();
@@ -115,7 +123,9 @@ public class LinkedList {
 		// System.out.println(list.indexOf(30));
 		// System.out.println(list.contains(40));
 		//list.removeFirst();
-		list.removeLast();
+		//list.removeLast();
+		printList(list);
+		
 	}
 
 }

@@ -1,6 +1,7 @@
 package java8Stream;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,12 +23,20 @@ public class SortedStream {
 		for(Employee obj : employees) {
 			System.out.println(obj.getName());
 		}
-		System.out.println("=================================");
+		System.out.println("Sorted by name=================================");
 		List<Employee> employees1 = employees.stream()
 			      .sorted((e1, e2) -> e1.getName().compareTo(e2.getName()))
 			      .collect(Collectors.toList());
 
 		for(Employee obj : employees1) {
+			System.out.println(obj.getName());
+		}
+		
+		System.out.println("Sorted by name2=================================");
+		List<Employee> employees2 = employees.stream()
+			      .sorted(Comparator.comparing(Employee::getName))
+			      .collect(Collectors.toList());
+		for(Employee obj : employees2) {
 			System.out.println(obj.getName());
 		}
 	}

@@ -2,9 +2,9 @@ package sorting;
 
 public class BinarySearch {
 	public static void main(String[] args) {
-		int[] numbers = { -11, -5, 0, 3, 6, 9, 18, 25, 33 };
+		int[] numbers = { -11, -5, 1, 3, 6, 9, 18, 25, 33 };
 
-		int x = 0;
+		int x = 1;
 
 		System.out.println(binarySearchRecur(numbers, x, 0, numbers.length - 1));
 

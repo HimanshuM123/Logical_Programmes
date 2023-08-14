@@ -28,3 +28,11 @@ public class PermuteStringPractice {
 		return String.valueOf(a);
 	}
 }
+
+//
+//ABC
+//ACB
+//BAC
+//BCA
+//CBA
+//CAB

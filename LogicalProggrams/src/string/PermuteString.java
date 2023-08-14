@@ -38,3 +38,11 @@ public class PermuteString {
 	}
 
 }
+
+
+//ABC
+//ACB
+//BAC
+//BCA
+//CBA
+//CAB
