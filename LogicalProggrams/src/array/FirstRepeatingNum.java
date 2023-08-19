@@ -19,10 +19,18 @@ public class FirstRepeatingNum {
 		Set<Integer> set = new HashSet<>();
 		int element = -1;
 
-		for (int i = arr.length - 1; i > 0; i--) {
-			if (set.contains(arr[i])) {
-				element = arr[i];
-			} else {
+//		for (int i = arr.length - 1; i > 0; i--) {
+//			if (set.contains(arr[i])) {
+//				element = arr[i];
+//			} else {
+//				set.add(arr[i]);
+//			}
+//		}
+		
+		for(int i=0; i< arr.length;i++) {
+			if(set.contains(arr[i])) {
+				return arr[i];
+			}else {
 				set.add(arr[i]);
 			}
 		}

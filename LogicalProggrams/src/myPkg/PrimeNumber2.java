@@ -3,7 +3,7 @@ package myPkg;
 
 public class PrimeNumber2 {
 	public static void main(String[] args) {
-		int number=20;
+		int number=100;
 		boolean flag=false;
 		
 		for (int i=2;i<number;i++) {

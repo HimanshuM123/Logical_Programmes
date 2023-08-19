@@ -11,7 +11,8 @@ public class DuplicateCharsInString {
 		Map<Character,Integer> hm=new HashMap<>();
 		
 		for(char obj:arr) {
-			if(hm.containsKey(obj)) {
+			//if(hm.containsKey(obj)) {
+			if(hm.get(obj)!=null) {
 				hm.put(obj, hm.get(obj)+1);
 			}
 			else{

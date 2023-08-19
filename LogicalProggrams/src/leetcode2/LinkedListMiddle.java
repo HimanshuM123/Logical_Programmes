@@ -1,7 +1,7 @@
 package leetcode2;
 
 public class LinkedListMiddle {
-	Node head;
+	//Node head;
 	private class Node {
 		int data;
 		Node next;
