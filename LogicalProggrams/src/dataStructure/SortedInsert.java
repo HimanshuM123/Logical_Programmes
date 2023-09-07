@@ -40,7 +40,7 @@ public class SortedInsert {
 			
 			//newNode.next=head;
 		}
-		node.next =head.next
+		node.next =head.next;
 		head.next = node;
 	}
 	
