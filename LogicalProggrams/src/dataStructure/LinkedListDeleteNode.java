@@ -30,15 +30,13 @@ public class LinkedListDeleteNode {
 		}
 	}
 
-	private boolean deleteNode(Node head, int d) {
+	private void deleteNode(Node head, int d) {
 		while (head.next != null) {
 			if (head.next.data == d) {
 				head.next = head.next.next;
-				return true;
 			}
 			head = head.next;
 		}
-		return false;
 
 	}
 
@@ -48,8 +46,9 @@ public class LinkedListDeleteNode {
 		ll.addLast(20);
 		ll.addLast(30);
 		ll.addLast(40);
+		ll.addLast(30);
 		ll.addLast(50);
-		 ll.print(ll.first);
+		// ll.print(ll.first);
 		 System.out.println();
 		 ll.deleteNode(ll.first, 30);
 		ll.print(ll.first);
