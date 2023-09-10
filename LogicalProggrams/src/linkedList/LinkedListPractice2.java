@@ -1,4 +1,4 @@
-package dataStructure;
+package linkedList;
 
 public class LinkedListPractice2 {
 	Node head;

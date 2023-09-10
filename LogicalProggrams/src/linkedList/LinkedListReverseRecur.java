@@ -1,4 +1,4 @@
-package dataStructure;
+package linkedList;
 
 
 public class LinkedListReverseRecur {
