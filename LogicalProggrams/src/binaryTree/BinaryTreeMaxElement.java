@@ -29,7 +29,7 @@ public class BinaryTreeMaxElement {
 			}
 			
 			if(node.left!=null) {
-				st.push(node.right);
+				st.push(node.left);
 			}
 			
 			if (node.right!=null) {
