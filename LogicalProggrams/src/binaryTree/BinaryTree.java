@@ -1,34 +1,82 @@
 package binaryTree;
 
-class Node 
-{ 
-    int key; 
-    Node left, right; 
-  
-    public Node(int item) 
-    { 
-        key = item; 
-        left = right = null; 
-    } 
-} 
 
-public class BinaryTree {
-	Node root;
+public class BinaryTree{
 	
-	 BinaryTree() {
-
+	private static class TreeNode{
+		int data;
+		TreeNode left;
+		TreeNode right;
+		TreeNode(int data){
+			this.data = data;
+		}
 	}
-	 
-	 BinaryTree(int key){
-		 root=new Node(key);
-	 }
+	
+	private static void printTree(TreeNode root) {
+		if(root==null) {
+			return;
+		}
+		System.out.print(root.data+" ");
+		printTree(root.left);
+		printTree(root.right);
+	
+	}
+	
+	private static int size(TreeNode root) {
+		if(root==null) {
+			return 0;
+		}
+		
+		int left_size = size(root.left);
+		int right_size = size(root.right);
+		
+		int size = left_size+right_size+1;
+		return size;
+	}
+	
+	private static int max(TreeNode root) {
+		if (root ==null) {
+			return Integer.MIN_VALUE;
+		}
+		int left_max = max(root.left);
+		int right_max = max(root.right);
+		int max = Math.max(Math.max(left_max, right_max), root.data);
+		return max;
+		
+	}
 	
 	public static void main(String[] args) {
-		BinaryTree tree=new BinaryTree();
-		tree.root=new Node(1);
-		tree.root.left= new Node(2);
-		tree.root.right=new Node(3);
-		tree.root.left.left=new Node(4);
-	}
+		TreeNode root = new TreeNode(40);
+		TreeNode tree20 = new TreeNode(20);
+		TreeNode tree60 = new TreeNode(60);
+		TreeNode tree10 = new TreeNode(10);
+		TreeNode tree30 = new TreeNode(30);
+		TreeNode tree50 = new TreeNode(50);
+		TreeNode tree70 = new TreeNode(70);
+		root.left = tree20;
+		root.right = tree60;
+		tree20.left = tree10;
+		tree20.right = tree30;
+		tree60.left = tree50;
+		tree60.right = tree70;
+		printTree(root);
+		int size = size(root);
+		System.out.println();
+		System.out.println("The size is "+size);
+		int max = max(root);
+		System.out.println("max value is "+max);
 
+	}
+	
+	
+	
 }
+
+/*
+   40
+ /    \
+20     60
+/  \    / \
+10   30 50 70
+
+*/
