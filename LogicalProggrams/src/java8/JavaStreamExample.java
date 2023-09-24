@@ -28,11 +28,11 @@ public class JavaStreamExample {
 		productsList.add(new Product(4, "Sony Laptop", 28000f));
 		productsList.add(new Product(5, "Apple Laptop", 90000f));
 
-		List<Float> productPriceList2 = productsList.stream()
+		List<String> productList = productsList.stream()
 				.filter(obj -> obj.price > 30000)
-				.map(obj -> obj.price)
+				.map(obj -> obj.name)
 				.collect(Collectors.toList());
 
-		System.out.println(productPriceList2);
+		System.out.println(productList);
 	}
 }

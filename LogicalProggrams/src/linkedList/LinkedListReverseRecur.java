@@ -57,6 +57,7 @@ public class LinkedListReverseRecur {
 		list.addLast(30);
 		list.addLast(40);
 		list.addLast(50);
+		list.addLast(60);
 		//list.printList(list);
 		Node head =list.reverse(list.first);
 		list.printList(head);

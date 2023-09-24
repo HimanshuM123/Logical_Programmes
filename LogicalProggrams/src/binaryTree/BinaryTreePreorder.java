@@ -18,11 +18,13 @@ public class BinaryTreePreorder {
 	
 	
 	 private void preorder(TreeNode root) {
-	        if(root !=  null) {
+	        if(root ==  null) {
+	        	return;
+	        }
 	            System.out.printf("%d ",root.data);
 	            preorder(root.left);
 	            preorder(root.right);
-	        }
+	       
 	    }
 	 
 	private void preorderIterator(TreeNode root) {
@@ -65,9 +67,9 @@ public class BinaryTreePreorder {
 		node60.right = node70;
 		
 		BinaryTreePreorder bt = new BinaryTreePreorder();
-		bt.preorderIterator(rootNode);
+	//	bt.preorderIterator(rootNode);
 		System.out.println();
-	//	bt.preorder(rootNode);
+		bt.preorder(rootNode);
 
 	}
 
