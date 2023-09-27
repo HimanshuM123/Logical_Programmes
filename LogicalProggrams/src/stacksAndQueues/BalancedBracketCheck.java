@@ -5,7 +5,7 @@ import java.util.Stack;
 public class BalancedBracketCheck {
 	public static void main(String[] args) {
 
-		String expr = "([{}])";
+		String expr = "([{(}])";
 		if (isBalancedBracket(expr)) {
 			System.out.println("Brackets are balanced");
 		} else {
@@ -19,9 +19,9 @@ public class BalancedBracketCheck {
 		for (int i = 0; i < str.length(); i++) {
 
 			Character ch = str.charAt(i);
-			while (ch == '(' || ch == '{' || ch == '[') {
+			if (ch == '(' || ch == '{' || ch == '[') {
 				st.push(ch);
-				break;
+			
 			}
 			if (ch == ')') {
 				char close = st.pop();

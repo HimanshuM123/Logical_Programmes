@@ -7,7 +7,7 @@ public static void main(String[] args) {
 	
 	Stack<String> st= new Stack<String>();
 	
-	String inputStr= "(((a+b))+(c+d))";
+	String inputStr= "(a+b)+((c+d))";
 	for(int i=0;i<inputStr.length();i++) {
 		if(inputStr.charAt(i)==')') {
 			if(st.peek().equalsIgnoreCase("(")) {

@@ -48,7 +48,7 @@ public class PrintKLevelsDown {
 		node37.right = node40;
 		node62.left = node60;
 		node62.right = node70;
-		printKLevelsDown(1,rootNode);
+		printKLevelsDown(2,rootNode);
 //		System.out.println();
 //		printKLevelsDown(1,rootNode);
 //		System.out.println();

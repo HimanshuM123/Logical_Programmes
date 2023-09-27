@@ -34,7 +34,7 @@ public class LinkedListReverseRecur {
 	}
 	
 	private  Node reverse(Node head)  {
-        if (head == null || head.next == null)
+        if ( head.next == null)
             return head;
  
         /* reverse the rest list and put
@@ -58,6 +58,7 @@ public class LinkedListReverseRecur {
 		list.addLast(40);
 		list.addLast(50);
 		list.addLast(60);
+		
 		//list.printList(list);
 		Node head =list.reverse(list.first);
 		list.printList(head);
