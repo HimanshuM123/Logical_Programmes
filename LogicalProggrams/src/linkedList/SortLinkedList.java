@@ -27,7 +27,6 @@ public class SortLinkedList {
 	}
 
 	private void sortList() {
-
 		Node i = head;
 		Node j = null;
 		int temp;
@@ -47,7 +46,6 @@ public class SortLinkedList {
 
 			i = i.next;
 		}
-
 	}
 
 	public static void main(String[] args) {
