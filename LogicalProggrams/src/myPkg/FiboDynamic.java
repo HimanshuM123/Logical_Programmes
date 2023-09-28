@@ -17,6 +17,9 @@ public class FiboDynamic {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(fibo(5));
+		int n=6;
+		for(int i=0; i<n;i++) {
+		System.out.print(fibo(i)+" ");	
+		}
 	}
 }
