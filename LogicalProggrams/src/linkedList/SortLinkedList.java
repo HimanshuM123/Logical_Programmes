@@ -43,7 +43,6 @@ public class SortLinkedList {
 				}
 				j = j.next;
 			}
-
 			i = i.next;
 		}
 	}
