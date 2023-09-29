@@ -11,10 +11,10 @@ public class LargestNumber {
 		}
 		Arrays.sort(strs, new Comparator<String>() {
 			public int compare(String s1, String s2) {
-				String leftRight = s1 + s2;
-				String rightLeft = s2 + s1;
-				int i =-leftRight.compareTo(rightLeft);
-				System.out.println("i "+i);
+				String leftRight = s2+s1;
+				String rightLeft = s1+s2;
+				int i = leftRight.compareTo(rightLeft);
+				//System.out.println("i "+i);
 				return i;
 			}
 		});
@@ -36,7 +36,7 @@ public class LargestNumber {
 		//int x = -"21677".compareTo("17762");
 		
 		LargestNumber obj = new LargestNumber();
-		int[] arr = { 5,7,1 };
+		int[] arr = { 3, 30, 34, 5, 9 };
 	//	int[] arr = { 1,2,3,4,5 };
 		String result = obj.largestNumber(arr);
 		System.out.println(result);
