@@ -29,18 +29,14 @@ public class MergeSortedArray {
 		}
 
 		while (m > 0) {
-
 			result[k - 1] = A[m - 1];
 			m--;
 			k--;
-
 		}
 		while (n > 0) {
-
 			result[k - 1] = B[n - 1];
 			n--;
 			k--;
-
 		}
 		System.out.println(Arrays.toString(result));
 	}
