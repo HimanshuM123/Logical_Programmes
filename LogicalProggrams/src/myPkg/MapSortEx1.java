@@ -24,5 +24,4 @@ public class MapSortEx1 {
 			System.out.println(o.getKey() + " " + o.getValue());
 		}
 	}
-
 }
