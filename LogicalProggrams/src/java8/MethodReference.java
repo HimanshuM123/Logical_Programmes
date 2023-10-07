@@ -21,6 +21,7 @@ public class MethodReference {
 
 	public static void main(String[] args) {
 
+	//	Sayable sayable1 = () -> System.out.println("Saysomething 1");
 		Sayable sayable1 = () -> saySomething1();
 		// Sayable sayable1=MethodReference::saySomething1;
 		Sayable sayable2 = MethodReference::saySomething2;
