@@ -21,7 +21,8 @@ public class CodingInterview {
 		//Numbers starts with 1
 		List<Integer> list2= Arrays.asList(2,11,14,67,4,3,18,100);
 		System.out.println("Numbers starts with 1 ->");
-		List<String> result =list2.stream().map( a -> a+"").filter(b -> b.startsWith("1")).collect(Collectors.toList());
+		//List<String> result =list2.stream().map( a -> a+"").filter(b -> b.startsWith("1")).collect(Collectors.toList());
+		List<String> result =list2.stream().map( a -> a.toString()).filter(b -> b.startsWith("1")).collect(Collectors.toList());
 		result.forEach(x -> System.out.print(x+" "));
 		System.out.println();
 		
