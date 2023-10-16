@@ -24,7 +24,6 @@ public class ValidParanthesis {
 					st.pop();
 				}
 			}
-
 		}
 
 		if (st.isEmpty()) {

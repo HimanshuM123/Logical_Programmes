@@ -17,7 +17,7 @@ public class CyclicBarrierMain {
 		new Thread(runnableTask2, "Thread-2").start();
 		new Thread(runnableTask3, "Thread-3").start();
 		/*
-		 * We are reusing cyclic barrier using below threads
+		 * ***************************We are reusing cyclic barrier using below threads
 		 */
 		RunnableTask runnableTask4 = new RunnableTask(cyclicBarrier, 4000);
 		RunnableTask runnableTask5 = new RunnableTask(cyclicBarrier, 5000);

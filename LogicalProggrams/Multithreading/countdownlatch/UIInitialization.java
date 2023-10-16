@@ -18,7 +18,7 @@ public class UIInitialization implements Runnable {
 // TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("Done with UI Initialization");
+		System.out.println("Done with UI Initialization==================");
 		latch.countDown();
 	}
 }

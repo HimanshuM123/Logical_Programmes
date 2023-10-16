@@ -18,7 +18,7 @@ public class LoggingInitialization implements Runnable {
 // TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("Done with Logging Initialization");
+		System.out.println("Done with Logging Initialization==================");
 		latch.countDown();
 	}
 }

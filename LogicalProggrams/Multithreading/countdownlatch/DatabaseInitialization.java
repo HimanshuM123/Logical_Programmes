@@ -19,7 +19,7 @@ public class DatabaseInitialization implements Runnable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("Done with database Initialization");
+		System.out.println("Done with database Initialization==================");
 		latch.countDown();
 	}
 }

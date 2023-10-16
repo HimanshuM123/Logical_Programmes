@@ -34,7 +34,7 @@ class Task implements Callable<Integer>{
 
 	@Override
 	public Integer call() throws Exception {
-		Thread.sleep(10000);
+		Thread.sleep(3000);
 		// TODO Auto-generated method stub
 		return new Random().nextInt();
 	}

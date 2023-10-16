@@ -16,7 +16,6 @@ public class FirstNonRepeatingChars {
 			} else {
 				hm.put(o, hm.get(o) + 1);
 			}
-
 		}
 
 		for (Map.Entry<Character, Integer> m : hm.entrySet()) {

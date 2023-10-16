@@ -13,11 +13,8 @@ public class MiddleElement {
 				System.out.println("Middle ele is = "+arr[left]);
 				break;
 			}
-			
 			left++;
 			right--;
 		}
-		
 	}
-
 }

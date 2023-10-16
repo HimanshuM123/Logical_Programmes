@@ -25,13 +25,13 @@ public class StreamEx {
 				                      .filter(s -> s.marks >=60)
 				                      .map(Student::getName)
 				                      .collect(Collectors.toList());
-				System.out.println("firstClassList  "+firstClassList);
+				System.out.println("firstClassList --- "+firstClassList);
 				
 		// Maximum marks
 			Optional<String> max_marks_name=	students.stream()
 					                            .max(Comparator.comparing(Student::getMarks))
 					                            .map(Student::getName);
-			System.out.println("Student with max marks "+max_marks_name);
+			System.out.println("Student with max marks ---"+max_marks_name.get());
 			
 			//sort by max marks
 			List<String> students1=	students.stream()
