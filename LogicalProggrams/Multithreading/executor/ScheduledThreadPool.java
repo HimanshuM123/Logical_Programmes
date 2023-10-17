@@ -8,7 +8,7 @@ class StockMarketUpdater implements Runnable {
 
 	@Override
 	public void run() {
-		System.out.println("Updating & downloading stock related data...");
+		System.out.println("Updating & downloading stock related data.. "+ Thread.currentThread().getName());
 
 	}
 

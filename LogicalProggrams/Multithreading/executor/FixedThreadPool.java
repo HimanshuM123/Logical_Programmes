@@ -14,7 +14,7 @@ class Work implements Runnable {
 
 	@Override
 	public void run() {
-		System.out.println("Task with Id " + id + " is in work-thread id: " + Thread.currentThread().getId());
+		System.out.println("Task with Id " + id + " is in work-thread name: " + Thread.currentThread().getName());
 		try {
 			TimeUnit.SECONDS.sleep(1);
 		} catch (InterruptedException e) {
@@ -26,7 +26,8 @@ class Work implements Runnable {
 public class FixedThreadPool {
 
 	public static void main(String[] args) {
-		ExecutorService executer = Executors.newFixedThreadPool(2);
+		ExecutorService executer = Executors.newFixedThreadPool(3);
+	//	ExecutorService executer = Executors.newSingleThreadExecutor();
 		// creates 2 threads to execute given task
 		// reuses the threads
 
@@ -39,7 +40,7 @@ public class FixedThreadPool {
 		// terminate actual running tasks
 		try {
 			if (!executer.awaitTermination(1000, TimeUnit.MILLISECONDS)) {
-				executer.shutdownNow();//terminates immediately
+				//executer.shutdownNow();//terminates immediately
 			}
 
 		} catch (InterruptedException e) {
