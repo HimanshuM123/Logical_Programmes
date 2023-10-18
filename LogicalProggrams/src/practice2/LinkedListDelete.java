@@ -46,7 +46,8 @@ public class LinkedListDelete {
 		}
 		
 	}
-
+	
+	
 	public static void main(String[] args) {
 		LinkedListDelete ll = new LinkedListDelete();
 		ll.push(40);

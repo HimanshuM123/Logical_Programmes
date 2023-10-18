@@ -39,7 +39,7 @@ public class LinkedListDeleteNode {
 		}
 
 	}
-
+//10->20->30->40->30->50
 	public static void main(String[] args) {
 		LinkedListDeleteNode ll = new LinkedListDeleteNode();
 		ll.addLast(10);
