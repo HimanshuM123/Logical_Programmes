@@ -54,3 +54,14 @@ public class StreamsMapExample {
     }
 
 }
+
+
+/*
+ 
+ namesUpperCase List : [ADAM, JENNY, EMILY, DAVE, SOPHIA, JAMES]
+namesUpperCase Set : [ADAM, DAVE, JAMES, SOPHIA, JENNY, EMILY]
+namesLengthMap : {dan=3, adam=4, jenny=5}
+
+  
+ * */
+ 

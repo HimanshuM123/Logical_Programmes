@@ -2,6 +2,9 @@ package myPkg;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class ArrayEquality {
 	public static void main(String[] args) {
@@ -19,6 +22,8 @@ public class ArrayEquality {
 			}
 
 		}
+		
+	//	hm = Stream.of(arr1.).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
 		for (Integer obj : arr2) {
 			if (hm.get(obj) != null && hm.get(obj) >= 1) {

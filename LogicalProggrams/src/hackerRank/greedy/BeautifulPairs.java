@@ -1,4 +1,4 @@
-package hackerRank;
+package hackerRank.greedy;
 
 public class BeautifulPairs {
 
