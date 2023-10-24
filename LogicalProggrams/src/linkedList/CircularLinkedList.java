@@ -40,6 +40,5 @@ public class CircularLinkedList {
 		list.addLast(30);
 		list.addLast(40);
 		list.makeCircular(list.first);
-
 	}
 }
