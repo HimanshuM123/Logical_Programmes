@@ -46,7 +46,6 @@ public class RemoveDuplicates {
 				set.add(curr.data);
 				prev = curr;
 			}
-
 			curr = curr.next;
 		}
 		return head;
@@ -63,6 +62,7 @@ public class RemoveDuplicates {
 //		d.push(11);
 //		d.push(11);
 		d.push(66);
+		d.push(55);
 		d.push(55);
 		d.push(11);
 		//d.printList(d.head);
