@@ -54,13 +54,16 @@ public class RemoveDuplicates {
 
 	public static void main(String[] args) {
 		RemoveDuplicates d = new RemoveDuplicates();
-		d.push(66);
-		d.push(66);
+//		d.push(66);
+//		d.push(66);
+//		d.push(66);
+//		d.push(55);
+//		d.push(55);
+//		d.push(11);
+//		d.push(11);
+//		d.push(11);
 		d.push(66);
 		d.push(55);
-		d.push(55);
-		d.push(11);
-		d.push(11);
 		d.push(11);
 		//d.printList(d.head);
 		d.removeDuplicates(d.head);
