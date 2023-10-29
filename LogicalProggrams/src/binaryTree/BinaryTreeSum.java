@@ -13,6 +13,16 @@ public class BinaryTreeSum {
 		}
 
 	}
+	
+	private int sum(TreeNode node) {
+		if(node==null) {
+			return 0;
+		}
+		
+		int left_sum = sum(node.left);
+		int right_sum = sum (node.right);
+		return node.data+left_sum+right_sum;
+	}
 
 	private int size(TreeNode node) {
 		if (node==null) {
@@ -71,6 +81,8 @@ public class BinaryTreeSum {
 		System.out.println("The maximum element is "+max);
 		int height = bt.height(rootNode);
 		System.out.println("The maximum height is "+height);
+		int sum = bt.sum(rootNode);
+		System.out.println("The sum is "+sum);
 	}
 
 }

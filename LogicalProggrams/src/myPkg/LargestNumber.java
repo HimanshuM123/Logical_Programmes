@@ -9,14 +9,19 @@ public class LargestNumber {
 		for (int i = 0; i < nums.length; i++) {
 			strs[i] = String.valueOf(nums[i]);
 		}
-		Arrays.sort(strs, new Comparator<String>() {
-			public int compare(String s1, String s2) {
-				String leftRight = s2+s1;
-				String rightLeft = s1+s2;
-				int i = leftRight.compareTo(rightLeft);
-				//System.out.println("i "+i);
-				return i;
-			}
+//		Arrays.sort(strs, new Comparator<String>() {
+//			public int compare(String s1, String s2) {
+//				String left = s2+s1;
+//				String right = s1+s2;
+//				int i = left.compareTo(right);
+//				//System.out.println("i "+i);
+//				return i;
+//			}
+//		});
+		
+		Arrays.sort(strs, (s1,s2)->{
+			return (s2+s1).compareTo(s1+s2);
+			
 		});
 		
 		
