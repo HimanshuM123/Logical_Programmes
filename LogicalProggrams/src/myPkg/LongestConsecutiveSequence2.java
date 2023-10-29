@@ -25,7 +25,7 @@ public class LongestConsecutiveSequence2 {
 		}
 		System.out.println(result);
 
-		// 1,2,3,4,100,101
+		// 1,2,3,4,100,101,102,103,104,105
 
 	}
 }
