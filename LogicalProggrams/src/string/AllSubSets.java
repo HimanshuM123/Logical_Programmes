@@ -21,3 +21,14 @@ public static void main(String[] args) {
 	
 }
 }
+/*
+
+F
+FU
+FUN
+U
+UN
+N
+
+
+*/
