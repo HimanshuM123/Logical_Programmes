@@ -26,6 +26,8 @@ public class LongestSubstring {
 			}
 		}
 
-		System.out.println("The longest substring withou repeating is " + longestStr);
+		System.out.println("The longest substring without repeating is " + longestStr);
 	}
 }
+//The longest substring without repeating is [o, f, t, h, e, d, a, y]
+

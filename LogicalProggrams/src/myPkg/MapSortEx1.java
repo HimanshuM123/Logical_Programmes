@@ -19,9 +19,10 @@ public class MapSortEx1 {
 		List<Map.Entry<Integer, String>> list = new ArrayList<>(set);
 
 		Collections.sort(list, (a, b) -> a.getValue().compareTo(b.getValue()));
-
-		for (Map.Entry<Integer, String> o : list) {
-			System.out.println(o.getKey() + " " + o.getValue());
+		
+		for(Map.Entry<Integer, String> o : list) {
+			System.out.println(o.getKey()+"  "+o.getValue());
 		}
+
 	}
 }
