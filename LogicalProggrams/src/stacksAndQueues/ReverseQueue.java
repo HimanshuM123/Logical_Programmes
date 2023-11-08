@@ -17,8 +17,8 @@ public class ReverseQueue {
 	private static Queue reverse(Queue<Integer> queue) {
 		Stack<Integer> st = new Stack<>();
 		while (!queue.isEmpty()) {
-			st.push(queue.peek());
-			queue.remove();
+			st.push(queue.remove());
+			
 		}
 		while (!st.isEmpty()) {
 			queue.add(st.peek());
