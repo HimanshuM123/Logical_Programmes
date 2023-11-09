@@ -36,16 +36,16 @@ public class CelebrityProblem {
 				stack.push(i);
 			}
 		}
-		int pot = stack.pop();
+		int potential_celebrity = stack.pop();
 		for(int i=0;i<arr.length;i++) {
-			if(i!=pot) {
-				if(arr[i][pot]==0 || arr[pot][i]==1) {
+			if(i!=potential_celebrity) {
+				if(arr[i][potential_celebrity]==0 || arr[potential_celebrity][i]==1) {
 					System.out.println("none");
 					return;
 				}
 			}
 		}
-		System.out.println(pot);
+		System.out.println(potential_celebrity);
 	}
 
 }
