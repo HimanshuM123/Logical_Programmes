@@ -12,7 +12,7 @@ public static void main(String[] args) {
 		result[arr.length-1]=-1;
 	for(int i=arr.length-2;i>=0;i--) {
 		while (st.size()>0 && arr[i]>= st.peek()) {
-			st.pop();    //pop
+			st.pop();    //pop small elements
 		}
 		if(st.size()==0) {
 			result[i]=-1;   //print
@@ -25,9 +25,23 @@ public static void main(String[] args) {
 }
 }
 
-// i=0 
-
-
 //Next greater element to the right
 //[2 5 9  3  1  12 6  8  7]==>
 //[5 9 12 12 12 -1 8 -1 -1]
+/*
+   		   |        
+   		   |        
+   		   |
+   	|	   |
+   	|	   |     |
+   	|	   |     |  |
+   	|	   |  |  |  |
+  | |      |  |  |  |
+  | |      |  |  |  |
+  | |  |   |  |  |  |
+| | |  |   |  |  |  |
+| | |  | | |  |  |  |
+2 5 9  3 1 12 6  8  7
+
+
+*/
