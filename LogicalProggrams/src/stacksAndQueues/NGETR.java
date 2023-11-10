@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class NGETR {
 public static void main(String[] args) {
-	int [] arr = {2, 5, 9, 3, 1, 12, 6,  8, 7};
+	int [] arr = {2, 5, 9, 3, 1, 12, 6,  8, 5,4,6};
 	int [] result = new int[arr.length];
 	Stack <Integer> st = new Stack<>();
 		st.push(arr[arr.length-1]);
@@ -24,24 +24,23 @@ public static void main(String[] args) {
 	System.out.println(Arrays.toString(result));
 }
 }
-
-//Next greater element to the right
-//[2 5 9  3  1  12 6  8  7]==>
-//[5 9 12 12 12 -1 8 -1 -1]
 /*
+//Next greater element to the right
+[2, 5, 9,  3,  1,  12, 6,  8, 5, 4,  6] ==>
+[5, 9, 12, 12, 12, -1, 8, -1, 6, 6, -1]
+
    		   |        
    		   |        
    		   |
    	|	   |
    	|	   |     |
-   	|	   |     |  |
-   	|	   |  |  |  |
-  | |      |  |  |  |
-  | |      |  |  |  |
-  | |  |   |  |  |  |
-| | |  |   |  |  |  |
-| | |  | | |  |  |  |
-2 5 9  3 1 12 6  8  7
-
+   	|	   |     |  
+   	|	   |  |  |       |
+  | |      |  |  |  |    |
+  | |      |  |  |  | |  |
+  | |  |   |  |  |  | |  |
+| | |  |   |  |  |  | |  |
+| | |  | | |  |  |  | |  |
+2 5 9  3 1 12 6  8  5 4  6
 
 */
