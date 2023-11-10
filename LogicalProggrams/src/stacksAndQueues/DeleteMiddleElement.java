@@ -4,14 +4,16 @@ import java.util.Stack;
 
 public class DeleteMiddleElement {
 
-	private static void deleteMid(Stack<Integer> st, int n, int curr) {
+	private static int SIZE = 0;
+
+	private static void deleteMid(Stack<Integer> st, int curr) {
 		if (st.empty()) {
 			return;
 		}
 		Integer x = st.pop();
-		deleteMid(st, n, curr + 1);
+		deleteMid(st, curr + 1);
 
-		if (curr != n / 2) {
+		if (curr != SIZE / 2) {
 			st.push(x);
 		}
 	}
@@ -31,7 +33,10 @@ public class DeleteMiddleElement {
 		st.push(5);
 		st.push(6);
 		st.push(7);
-		deleteMid(st, st.size(), 0);
+		//printStack(st);
+		System.out.println();
+		SIZE = st.size();
+		deleteMid(st, 0);
 		printStack(st);
 	}
 }
