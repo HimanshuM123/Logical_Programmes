@@ -1,4 +1,4 @@
-package myPkg;
+package stacksAndQueues;
 
 import java.util.Stack;
 
