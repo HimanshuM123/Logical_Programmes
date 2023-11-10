@@ -23,3 +23,15 @@ public class DefaultMethods implements Sayable4{
   
     }  
 }  
+
+
+class DefaultMethods_1 implements Sayable4{
+
+	@Override
+	public void sayMore(String msg) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	// No need to override sayMore method  ***********************************
+}
