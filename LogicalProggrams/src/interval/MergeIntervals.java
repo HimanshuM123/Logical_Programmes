@@ -36,7 +36,7 @@ public class MergeIntervals {
 			if (top.end < arr[i].start) { // not overlapping
 				stack.push(arr[i]);
 			} else if (top.end < arr[i].end) { //  overlapping
-				top.end = arr[i].end;
+				top.end = arr[i].end;  //[1,3],[2,6] -> [1,6]
 				stack.pop();
 				stack.push(top);
 			}
