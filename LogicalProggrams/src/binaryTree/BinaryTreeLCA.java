@@ -75,9 +75,9 @@ public class BinaryTreeLCA {
 }
 
 /*
-		40
+		 40
 	   /   \
-	 20    60
+	 20     60
 	/  \    / \
   10  30  50  70
   /        \
