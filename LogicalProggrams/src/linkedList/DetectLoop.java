@@ -1,8 +1,5 @@
 package linkedList;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class DetectLoop {
 	static Node head;
 
@@ -35,6 +32,25 @@ public class DetectLoop {
 		return false;
 
 	}
+	
+	private int lengthOfLopp(Node head) {
+		Node slow = head;
+		Node fast = head;
+		while(fast!=null && fast.next!=null) {
+			slow = slow.next;
+			fast = fast.next.next;
+			if(slow==fast) {
+				Node temp =slow;
+				int length=0;
+				do {
+					temp=temp.next;
+					length++;
+				}while(temp!=slow);
+				return length;
+			}
+		}
+		return 0;
+	}
 
 	public static void main(String[] args) {
 		DetectLoop loop = new DetectLoop();
@@ -45,10 +61,26 @@ public class DetectLoop {
 		loop.push(40);
 		 loop.head.next.next.next.next = loop.head;
 
-		if (loop.detectLoop(head))
+		if (loop.detectLoop(head)) {
 			System.out.println("Loop Found");
-		else
+	
+		}
+		else {
 			System.out.println("Loop NOT  Found");
+		}
+		
+		int length= loop.lengthOfLopp(head);
+		System.out.println("The length of loop is "+length); //4
 	}
 
 }
+
+
+/*
+
+40 -> 30 -> 20 -> 10 
+^                 |
+|                 |
+-------------------
+
+*/
