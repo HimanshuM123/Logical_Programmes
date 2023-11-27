@@ -23,17 +23,15 @@ public class DetectLoop {
 	}
 
 	private boolean detectLoop(Node head) {
-		Set<Node> set = new HashSet<>();
-		while (head != null) {
-			if (set.contains(head)) {
+		Node fast = head;
+		Node slow = head;
+		while (fast != null && fast.next != null) {
+			slow = slow.next;
+			fast = fast.next.next;
+			if (slow == fast) {
 				return true;
 			}
-
-			set.add(head);
-
-			head = head.next;
 		}
-
 		return false;
 
 	}
@@ -45,12 +43,12 @@ public class DetectLoop {
 		loop.push(20);
 		loop.push(30);
 		loop.push(40);
-		loop.head.next.next.next.next = loop.head;
+		 loop.head.next.next.next.next = loop.head;
 
 		if (loop.detectLoop(head))
 			System.out.println("Loop Found");
 		else
-			System.out.println("No Loop");
+			System.out.println("Loop NOT  Found");
 	}
 
 }

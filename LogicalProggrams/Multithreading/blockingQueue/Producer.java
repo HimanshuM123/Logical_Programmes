@@ -15,7 +15,9 @@ public class Producer implements Runnable {
 		for (int i = 1; i <= 50; i++) {
 			System.out.println("Produced item " + i);
 			try {
+				
 				queue.put("item " + i);
+				//Thread.sleep(10);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
