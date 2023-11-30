@@ -40,6 +40,10 @@ public class StreamEx {
 					                 .collect(Collectors.toList());
 			System.out.println("Students with sorted marks "+students1);
 			
+			List<String> students1_1=	students.stream().sorted((a,b)-> (b.getMarks()- a.getMarks())).map(Student::getName)
+	                 .collect(Collectors.toList());
+			System.out.println("Students with sorted marks "+students1_1);
+			
 			//count students haveing more than 80
 			Long count =students.stream().filter(s -> s.marks >80).collect(Collectors.counting());
 			System.out.println("Studnets having more than 80% -> "+count);
