@@ -27,7 +27,7 @@ public class StreamEx {
 				                      .collect(Collectors.toList());
 				System.out.println("firstClassList --- "+firstClassList);
 				
-		// Maximum marks
+			// Maximum marks
 			Optional<String> max_marks_name=	students.stream()
 					                            .max(Comparator.comparing(Student::getMarks))
 					                            .map(Student::getName);
