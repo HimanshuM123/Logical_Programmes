@@ -1,6 +1,6 @@
 package linkedList;
 
-public class LinkedListReverse {
+public class Reverse {
 
 	 static Node head;
 	 
@@ -44,7 +44,7 @@ public class LinkedListReverse {
 	    // Driver Code
 	    public static void main(String[] args)
 	    {
-	    	LinkedListReverse list = new LinkedListReverse();
+	    	Reverse list = new Reverse();
 	        list.head = new Node(1);
 	        list.head.next = new Node(2);
 	        list.head.next.next = new Node(3);

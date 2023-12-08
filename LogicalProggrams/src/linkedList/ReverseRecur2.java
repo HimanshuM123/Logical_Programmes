@@ -1,6 +1,6 @@
 package linkedList;
 
-public class LinkedListReverseRecur2 {
+public class ReverseRecur2 {
 	Node first;
 	Node last;
 
@@ -45,7 +45,7 @@ public class LinkedListReverseRecur2 {
 	}
 
 	public static void main(String[] args) {
-		LinkedListReverseRecur2 ll = new LinkedListReverseRecur2();
+		ReverseRecur2 ll = new ReverseRecur2();
 		ll.addLast(10);
 		ll.addLast(20);
 		ll.addLast(30);

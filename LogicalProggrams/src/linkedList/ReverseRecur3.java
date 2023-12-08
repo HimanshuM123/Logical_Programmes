@@ -1,6 +1,6 @@
 package linkedList;
 
-public class LinkedListReverseRecur3 {
+public class ReverseRecur3 {
 	private class Node {
 		int data;
 		Node next;
@@ -42,7 +42,7 @@ public class LinkedListReverseRecur3 {
 	}
 	
 	public static void main(String[] args) {
-		LinkedListReverseRecur3 ll = new LinkedListReverseRecur3();
+		ReverseRecur3 ll = new ReverseRecur3();
 		ll.addLast(10);
 		ll.addLast(20);
 		ll.addLast(30);

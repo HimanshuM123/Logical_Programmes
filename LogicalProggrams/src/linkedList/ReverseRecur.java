@@ -1,7 +1,7 @@
 package linkedList;
 
 
-public class LinkedListReverseRecur {
+public class ReverseRecur {
 	
 	private Node first= null;
 	private Node last = null;
@@ -51,13 +51,13 @@ public class LinkedListReverseRecur {
     }
 	public static void main(String[] args) {
 		
-		LinkedListReverseRecur list = new LinkedListReverseRecur();
+		ReverseRecur list = new ReverseRecur();
 		list.addLast(10);
 		list.addLast(20);
 		list.addLast(30);
 		list.addLast(40);
 		list.addLast(50);
-		list.addLast(60);
+	
 		
 		//list.printList(list);
 		Node head =list.reverse(list.first);
@@ -65,5 +65,12 @@ public class LinkedListReverseRecur {
 		
 		
 	}
-
 }
+
+/*
+step1 -   10   20,30,40,50
+step2 -   10   50,40,30,20 (reverse(head.next)
+step3 -   10.next.next = 20  , 50,40,30,20-> 10 ( head.next.next = head)
+step4 -   50,40,30,20,10-> NULL  (head.next = null)
+
+*/
