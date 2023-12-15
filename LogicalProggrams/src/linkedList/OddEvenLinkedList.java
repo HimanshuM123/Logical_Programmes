@@ -39,7 +39,7 @@ public class OddEvenLinkedList {
 		Node odd = head;
 		Node even = head.next;
 		Node evenHead = even;
-
+//1  2  3  4  5 
 		while (even != null && even.next != null) {
 			odd.next = even.next;
 			odd = odd.next;
