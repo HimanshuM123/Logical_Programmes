@@ -28,7 +28,7 @@ public class RemoveDuplicatesSortedList {
 			head = head .next;
 		}
 	}
-	
+	// 10  20  20  30  30
 	private Node removeDuplicates(Node head) {
 		Node curr = head;
 		

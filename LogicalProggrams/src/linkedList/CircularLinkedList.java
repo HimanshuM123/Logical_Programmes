@@ -22,7 +22,7 @@ public class CircularLinkedList {
 			last = node;
 		}
 	}
-
+/*
 	private Node makeCircular(Node head) {
 		Node start = head;
 
@@ -31,6 +31,18 @@ public class CircularLinkedList {
 		}
 		head.next = start;
 		return start;
+	}
+	
+	*/
+	
+	private Node makeCircular(Node head) {
+		Node start = head;
+
+		while (start.next != null) {
+			start = start.next;
+		}
+		start.next = head;
+		return head;
 	}
 
 	public static void main(String[] args) {
