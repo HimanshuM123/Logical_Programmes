@@ -37,9 +37,7 @@ public class RemoveDuplicatesSortedList {
 				curr.next= curr.next.next;
 			}else {
 				curr = curr.next;	
-			}
-			
-			
+			}		
 		}
 		
 		return head;
