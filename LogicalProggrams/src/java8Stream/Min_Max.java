@@ -1,6 +1,7 @@
 package java8Stream;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -34,6 +35,13 @@ public class Min_Max {
 				      .min((e1, e2) -> e1.getId() + e2.getId())
 				      .orElseThrow(NoSuchElementException::new);
 			System.out.println("Maximum2 =>"+max.getId());
+			
+			List<Integer> list = Arrays.asList(1,2,3,4,5,6,7);
+			Integer  max_num= 	list.stream().max(Comparator.comparing(a -> a)).get(); //7
+			System.out.println(max_num);
+			
+			Integer  min_num= 	list.stream().min(Comparator.comparing(a -> a)).get(); //1
+			System.out.println(min_num);
 
 	}
 

@@ -1,11 +1,14 @@
 package hashing;
 
+import java.util.Arrays;
+
 public class TwoSum {
 
 	private static boolean checkSumPair(int[] arr, int num) {
 
 		int left = 0;
 		int right = arr.length-1;
+		Arrays.sort(arr);
 
 		while (left <= right) {
 			int sum = arr[left] + arr[right];

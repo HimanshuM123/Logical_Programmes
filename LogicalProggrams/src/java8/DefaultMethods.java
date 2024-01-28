@@ -33,5 +33,5 @@ class DefaultMethods_1 implements Sayable4{
 		
 	}
 	
-	// No need to override sayMore method  ***********************************
+	// No need to override say method  ***********************************
 }
