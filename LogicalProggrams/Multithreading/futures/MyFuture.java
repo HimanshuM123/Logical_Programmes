@@ -18,6 +18,7 @@ public class MyFuture {
 //			Thread.sleep(200);
 //		}
 		System.out.println("Task completed ! getting the result");
+		System.out.println("Main thread waiting here ...");
 		String result = future.get();
 		System.out.println("Result -> "+result);
 		es.shutdown();

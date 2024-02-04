@@ -1,5 +1,6 @@
 package Streams_terminal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -22,5 +23,9 @@ public class MinTest {
 	     String minString = min.get();
 
 	     System.out.println(minString);
+	     
+	     List<Integer> intList = Arrays.asList(1,2,3,4,5);
+	    int min_num= intList.stream().min((a,b)-> a.compareTo(b)).get();
+	    System.out.println(min_num);
 	}
 }
