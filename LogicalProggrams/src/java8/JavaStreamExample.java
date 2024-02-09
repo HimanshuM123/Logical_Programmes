@@ -2,6 +2,9 @@ package java8;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 class Product {
@@ -32,7 +35,58 @@ public class JavaStreamExample {
 				.filter(obj -> obj.price > 30000)
 				.map(obj -> obj.name)
 				.collect(Collectors.toList());
+		
+		
+		Predicate<? super Product> pred = new Predicate<Product>() {
+			@Override
+			public boolean test(Product n) {
+				return n.price > 30000;
+			}
+		};
+		
+		Function<Product, String> fun = new Function<Product, String>() {
 
+			@Override
+			public String apply(Product product) {
+				return product.name;
+			}
+
+		};
+		
+		Consumer<String> consumer = new Consumer<String>() {
+			@Override
+			public void accept(String str) {
+				System.out.print(str + " ");
+			}
+		};
+
+		 productsList.stream()
+//				.filter(pred)
+				.filter(new Predicate<Product>() {
+					@Override
+					public boolean test(Product n) {
+						return n.price > 30000;
+					}
+				})
+//				.map(fun)
+				.map(new Function<Product, String>() {
+					@Override
+					public String apply(Product product) {
+						return product.name;
+					}
+
+				//}).forEach(consumer);
+				}).forEach(new Consumer<String>() {
+					@Override
+					public void accept(String str) {
+						System.out.print(str + " ");
+					}
+				});
+		 
+		
+		
+       System.out.println();
 		System.out.println(productList);
+		
 	}
 }

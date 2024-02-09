@@ -1,9 +1,8 @@
 package practice2;
 
 public class LinkedListMiddle {
-	Node first;
-	Node last;
 
+	Node first, last;
 	private class Node {
 		int data;
 		Node next;
@@ -12,37 +11,26 @@ public class LinkedListMiddle {
 			this.data = data;
 		}
 	}
-
-	private void printList(Node head) {
-		while (head != null) {
-			System.out.print(head.data + " ");
-			head = head.next;
-		}
-	}
-
-	private void printMiddle(Node head) {
-		Node slow_ptr = null;
-		Node fast_ptr = null;
-		
-		slow_ptr= fast_ptr=head;
-
-		while (fast_ptr != null && fast_ptr.next != null) {
-			slow_ptr = slow_ptr.next;
-			fast_ptr = fast_ptr.next.next;
-		}
-		System.out.println("Middle element is " + slow_ptr.data);
-	}
-
-	private void addLast(int data) {
-		Node node = new Node(data);
-		if (first == null) {
-			first = last = node;
-		} else {
-			last.next = node;
+	
+	private void addLast(int d) {
+		Node node = new Node(d);
+		if(first == null) {
+			first = last =node;
+		}else {
+			last.next =node;
 			last = node;
 		}
+		
 	}
-
+	
+	private void printList(Node node) {
+		while(node != null) {
+			System.out.println(node.data+" ");
+			node = node.next;
+		}
+	}
+	
+	
 	public static void main(String[] args) {
 		LinkedListMiddle ll = new LinkedListMiddle();
 		ll.addLast(10);
@@ -50,7 +38,6 @@ public class LinkedListMiddle {
 		ll.addLast(30);
 		ll.addLast(40);
 		ll.addLast(50);
-		//ll.printList(ll.first);
-		ll.printMiddle(ll.first);
+		ll.printList(ll.first);
 	}
 }
