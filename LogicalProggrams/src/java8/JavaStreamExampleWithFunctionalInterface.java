@@ -20,7 +20,7 @@ class Product {
 
 }
 
-public class JavaStreamExample {
+public class JavaStreamExampleWithFunctionalInterface {
 
 	public static void main(String[] args) {
 		List<Product> productsList = new ArrayList<Product>();
