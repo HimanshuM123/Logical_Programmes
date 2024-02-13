@@ -1,89 +1,19 @@
 package practice2;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Practice {
 	
-	private class Node {
-		int data;
-		Node next;
-		Node(int data){
-			this.data = data;
-		}
-		
-	}
-	
-	Node first, last;
-	
-	private void addLast(int d) {
-		Node node = new Node(d);
-		if(first == null) {
-			first = last = node;
-		}else {
-			last.next=node;
-			last = node;
-		}
-		
-	}
-	
-	private boolean isPalimdrom(Node head) {
-		Node slow_ptr =head;
-		Node fast_ptr =head;
-		
-		while(fast_ptr!=null && fast_ptr.next!=null) {
-			slow_ptr= slow_ptr.next;
-			fast_ptr=fast_ptr.next.next;
-		}
-		
-		slow_ptr = reverse(slow_ptr);
-		
-		while(slow_ptr.next!=null) {
-			if(slow_ptr.data != head.data) {
-				return false;
-			}
-			slow_ptr = slow_ptr.next;
-			head= head.next;
-		}
-		
-		return true;
-		
-		
-	}
-	// 10, 20,30 ,40 ,50
-	
-	private Node reverse(Node head) {
-		if(head==null || head.next==null) {
-			return head;
-		}
-		
-		Node rest = reverse(head.next);
-		head.next.next=head;
-		head.next=null;
-		
-		return rest;
-		
-	}
-	
-	private void printList(Node head) {
-		if(head==null) {
-			return;
-		}
-		System.out.print(head.data+" ");
-		printList(head.next);	
-	}
-
-	
 	public static void main(String[] args) {
-		Practice p = new Practice();
-		p.addLast(1);
-		p.addLast(2);
-		p.addLast(3);
-		p.addLast(2);
-		p.addLast(1);
+		Map<Integer,String> hm = new HashMap<>();
+		hm.put(1, "abc");
+		hm.put(2, "xyz");
+		hm.put(1, "some other value");
 		
-		p.printList(p.first);
-		
-		boolean result = p.isPalimdrom(p.first);
-		System.out.println(result);
-		
+		for(Map.Entry<Integer,String> obj : hm.entrySet()) {
+			System.out.println(obj.getKey()+" "+obj.getValue());
+		}
+			
 	}
-
 }
