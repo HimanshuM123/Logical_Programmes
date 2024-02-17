@@ -35,3 +35,4 @@ public class SmallerNumbersThanCurrent {
 	}
 
 }
+//[4, 0, 1, 1, 3]

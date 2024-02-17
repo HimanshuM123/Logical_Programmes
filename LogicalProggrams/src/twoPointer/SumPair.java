@@ -29,6 +29,7 @@ public class SumPair {
 	}
 
 }
+//output -> [1, 3]
 
 
 /*
