@@ -19,16 +19,23 @@ public class RemoveDuplicates {
 		int i=0;
 		int j=1;
 		
+//		while(j < arr.length) {
+//			if(arr[i]==arr[j] ){
+//				j++;
+//				
+//			}else {
+//				i++;
+//				arr[i]=arr[j];
+//				j++;
+//				
+//			}
+//		}
 		while(j < arr.length) {
-			if(arr[i]==arr[j] ){
-				j++;
-				
-			}else {
+			if(arr[i]!=arr[j] ){
 				i++;
 				arr[i]=arr[j];
-				j++;
-				
 			}
+			j++;
 		}
 		int result [] = new int[i+1];
 		for(int k=0;k<=i;k++) {

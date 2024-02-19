@@ -17,7 +17,8 @@ public class SumClosestToZero2 {
 
 		int left = 0;
 		int right = arr.length - 1;
-		int minSum = Math.abs(arr[0] + arr[1]);
+		//int minSum = Math.abs(arr[0] + arr[1]);
+		int minSum = Integer.MAX_VALUE;
 		while (left < right) {
 
 			int sum = Math.abs(arr[left] + arr[right]);
@@ -40,3 +41,5 @@ public class SumClosestToZero2 {
 		return resultArr;
 	}
 }
+
+//The result is [-7, 6]

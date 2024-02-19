@@ -23,10 +23,8 @@ public class LinkedLstMiddle2 {
 	Node slow_ptr = head;
 	if (null!= head) {
 		while(fast_ptr != null && fast_ptr.next !=null) {
-			
 			fast_ptr = fast_ptr.next.next;
 			slow_ptr = slow_ptr.next;
-		
 		}
 		System.out.println("The Middle element is "+slow_ptr.data);
 	}

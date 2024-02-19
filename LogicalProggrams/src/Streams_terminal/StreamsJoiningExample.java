@@ -35,3 +35,10 @@ public class StreamsJoiningExample {
 		System.out.println("Joining3 " + joining_3());
 	}
 }
+
+/*
+Joining1 AdamJennyEmilyDaveSophiaJames
+Joining2 Adam-Jenny-Emily-Dave-Sophia-James
+Joining3 (Adam-Jenny-Emily-Dave-Sophia-James)
+
+*/

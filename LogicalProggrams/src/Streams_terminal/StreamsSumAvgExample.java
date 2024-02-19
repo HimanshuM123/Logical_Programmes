@@ -13,13 +13,14 @@ public class StreamsSumAvgExample {
 		return StudentDataBase.getAllStudents()
 		.stream()
 		.collect(Collectors.summingInt(Student::getNoteBooks));
-	}
+	}//71
 	
 	public static double avg() {
 		return StudentDataBase.getAllStudents()
 		.stream()
 		.collect(Collectors.averagingInt(Student::getNoteBooks));
-	}
+	}//11.833333333333334
+
 
 	public static void main(String[] args) {
 		System.out.println(sum());

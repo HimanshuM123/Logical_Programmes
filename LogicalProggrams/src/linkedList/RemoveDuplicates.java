@@ -61,10 +61,12 @@ public class RemoveDuplicates {
 //		d.push(11);
 //		d.push(11);
 //		d.push(11);
-		d.push(66);
-		d.push(55);
-		d.push(55);
-		d.push(11);
+		d.push(4);
+		d.push(3);
+		d.push(3);
+		d.push(3);
+		d.push(2);
+		d.push(1);
 		//d.printList(d.head);
 		d.removeDuplicates(d.head);
 		d.printList(d.head);
