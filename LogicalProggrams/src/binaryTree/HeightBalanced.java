@@ -27,8 +27,6 @@ public class HeightBalanced {
 			return true;
 		}
 		return false;
-		
-		
 	}
 	private int height(TreeNode node) {
 		if(node ==null) {

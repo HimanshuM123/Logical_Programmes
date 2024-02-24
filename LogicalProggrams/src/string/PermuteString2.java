@@ -23,3 +23,11 @@ public class PermuteString2 {
 		}
 	}
 }
+/*
+ABC
+ACB
+BAC
+BCA
+CAB
+CBA
+*/

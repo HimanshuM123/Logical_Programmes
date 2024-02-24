@@ -20,7 +20,7 @@ public class FoldableTrees {
 		
 		mirror(node.left);
 		res= isStructSame(node.left,node.right);
-		mirror(node.left);
+		//mirror(node.left);
 		return res;
 	}
 	

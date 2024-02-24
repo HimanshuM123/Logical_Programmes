@@ -18,7 +18,6 @@ public class SymetricTree {
 		if (a == null || b == null) {
 			return false;
 		}
-
 		boolean left_mirror = areMirror(a.left, b.right);
 		boolean right_mirror = areMirror(a.right, b.left);
 		boolean both_mirror = left_mirror && right_mirror && (a.data == b.data);
@@ -26,7 +25,6 @@ public class SymetricTree {
 	}
 
 	private boolean isSymetric(TreeNode node) {
-
 		return areMirror(node.left, node.right);
 	}
 
