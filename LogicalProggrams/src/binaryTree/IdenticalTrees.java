@@ -30,14 +30,11 @@ public class IdenticalTrees {
 		if (a == null && b == null) {
 			return true;
 		}
-
-		if (a == null && b != null) {
-			return false;
-		}
 		
-		if (a != null && b == null) {
-			return false;
+		if (a == null || b == null) {
+			return true;
 		}
+
 			boolean flag1 = a.data == b.data;
 			boolean flag2 = isIdentical(a.left, b.left);
 			boolean flag3 = isIdentical(a.right, b.right);
