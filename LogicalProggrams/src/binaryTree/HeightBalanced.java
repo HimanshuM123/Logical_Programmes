@@ -46,7 +46,7 @@ public class HeightBalanced {
 		root.left = node2;
 		root.right = node3;
 		node2.left = node4;
-		//node4.right = node5;
+		node4.right = node5;
 		
 		HeightBalanced obj = new HeightBalanced();
 		boolean result = obj.isBalanced(root);

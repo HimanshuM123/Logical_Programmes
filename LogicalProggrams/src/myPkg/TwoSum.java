@@ -35,3 +35,12 @@ public class TwoSum {
 
 //Input: numbers={2, 7, 11, 15}, target=9
 //Output: index1=1, index2=2
+
+/*
+9-11 = -2 -> -2,0
+9-15 = -6-> -6,1
+9-2 = 7 -> 7,2
+9-7 = 2-> 2,3
+
+
+*/

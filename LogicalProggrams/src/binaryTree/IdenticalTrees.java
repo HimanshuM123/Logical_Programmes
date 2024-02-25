@@ -32,7 +32,7 @@ public class IdenticalTrees {
 		}
 		
 		if (a == null || b == null) {
-			return true;
+			return false;
 		}
 
 			boolean flag1 = a.data == b.data;
