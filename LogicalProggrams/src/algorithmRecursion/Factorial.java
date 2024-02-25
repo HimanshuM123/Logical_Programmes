@@ -2,17 +2,15 @@ package algorithmRecursion;
 
 public class Factorial {
 	public static void main(String[] args) {
-		System.out.println(fact(5));
+		System.out.println(len("Himanshu"));
 	}
 	
-	public  static int fact(int n) {
-		if (n<=1) { //<- termination condition
-			return 1;
+	public  static int len(String str) {
+		if(str.equals("")) {
+			return 0;
 		}
-		else {
-			int result = n*fact(n-1);
-			return result;
-		}
+		
+		return 1+ len(str.substring(1));
 	}
 
 }

@@ -28,11 +28,11 @@ public class HeightBalanced {
 		}
 		return false;
 	}
+	
 	private int height(TreeNode node) {
 		if(node ==null) {
 			return 0;
-		}
-		
+		}	
 		return 1+Math.max(height(node.right), height(node.left));
 	}
 
