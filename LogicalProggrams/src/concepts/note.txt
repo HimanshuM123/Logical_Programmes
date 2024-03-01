@@ -1,0 +1,18 @@
+1.
+Rehashing:
+
+Rehashing is the process of increasing the size of a hashmap and redistributing the elements to new buckets based on their new hash values. 
+It is done to improve the performance of the hashmap and to prevent collisions caused by a high load factor.
+
+2.
+can stringbuilder be hashmap key ?
+StringBuilder/Buffer is also mutable which is generally not a good idea to use as a key for a HashMap since storing the value under
+ it can cause the value to be inaccessible after modification. 
+StringBuilder uses Object 's default hashcode() implementation, whereas Strings are compared by value for the map keys
+
+
+3.
+how long does heap memory and stack memory live in java
+-Stack memory is short-lived whereas heap memory lives from the start till the end of application execution
+
+4.

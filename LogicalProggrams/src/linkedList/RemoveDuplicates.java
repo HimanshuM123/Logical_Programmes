@@ -74,3 +74,15 @@ public class RemoveDuplicates {
 	}
 
 }
+/*
+prev= curr
+prev= 1,2,3,3,3,4   curr=2,3,3,3,4
+prev= 2,3,3,3,4   curr= 3,3,3,4
+prev= 3,3,3,4   curr= 3,3,4
+prev.next= curr.next
+prev= 3,3,4   curr= 3,4
+prev= 3,4   curr= 4 ->NULL
+prev= 4   curr= NULL
+
+
+*/
