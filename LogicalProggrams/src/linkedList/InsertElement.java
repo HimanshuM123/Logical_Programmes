@@ -74,3 +74,13 @@ public class InsertElement {
 	}
 
 }
+
+/*
+
+0 1 2 3 4 5
+0 1 2 3  traverse
+9 -> null -- 4->5  new_node.next = temp.next;
+9->4->5
+
+0->1->2->3 ->9->4-> temp.next = new_node;
+*/
