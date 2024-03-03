@@ -15,4 +15,20 @@ StringBuilder uses Object 's default hashcode() implementation, whereas Strings 
 how long does heap memory and stack memory live in java
 -Stack memory is short-lived whereas heap memory lives from the start till the end of application execution
 
-4.
+4.What if HashMap hashcode() returns same value
+A hashcode() that always returns the same value is valid but not very effective. 
+In this case the comparison will always return true, so the equals() method will always be executed. There is no performance improvement in this case.  
+
+5.
+If the parent class is Serializable by default all the child classes also Serializable. 
+i.e Serializable nature is inherited from parent to child.
+
+6.How to exclude configuration file in Spring Boot?
+You can always manually exclude() any configuration that you never want to apply (use excludeName() 
+if you don't have access to them). You can also exclude them through the spring. autoconfigure. exclude property.
+
+7. What is the purpose of a static method in interface from Java 8?
+The reason is that we can call the static method by interface name and that static method can call the default method internally. 
+Example: Comparator::comparing, so here comparing is calling the default functionalities.
+
+
