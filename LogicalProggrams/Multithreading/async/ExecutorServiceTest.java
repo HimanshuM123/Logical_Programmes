@@ -7,7 +7,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class FutureTest {
+public class ExecutorServiceTest {
 	public static void main(String[] args) {
 		ExecutorService executorService=Executors.newFixedThreadPool(10);
 		Future<Integer> future= executorService.submit(new Task());
