@@ -1,5 +1,7 @@
 package printSequence;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.ExecutorService;
@@ -19,11 +21,18 @@ public class PrintSeq2 {
 //            System.out.println("a cycle done");
 //        });
 
-        IntStream.rangeClosed(0, 3)
-                .boxed()
-                .map(i -> new PrintSequenceTask(i, atomicInteger, cyclicBarrier))
-                .map(p -> executorService.submit(p))
-                .collect(Collectors.toList());
+//        IntStream.rangeClosed(0, 3)
+//                .boxed()
+//                .map(i -> new PrintSequenceTask(i, atomicInteger, cyclicBarrier))
+//                .map(p -> executorService.submit(p))
+//                .collect(Collectors.toList());
+        
+        List<Integer> list = Arrays.asList(0,1,2,3);
+        
+        list.stream()
+        .map(i -> new PrintSequenceTask(i, atomicInteger, cyclicBarrier))
+        .map(p -> executorService.submit(p))
+        .collect(Collectors.toList());
 
         executorService.shutdown();
 
@@ -46,7 +55,7 @@ class PrintSequenceTask implements Runnable {
     public void run(){
         for(int i=1; i<4;i++){
             while (((atomicInteger.get()-index-1)%4 != 0)){}
-            System.out.println(Thread.currentThread().getName()+" "+(atomicInteger.get())+" index "+index);
+            System.out.println(Thread.currentThread().getName()+" "+(atomicInteger.get())+" index "+index +"  i->"+i);
             atomicInteger.getAndIncrement();
             await();
         }
