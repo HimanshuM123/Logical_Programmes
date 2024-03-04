@@ -21,6 +21,10 @@ public class JavaStream {
 	OptionalDouble avg = rl.stream().map(Employee::getSalary).mapToInt(Integer::intValue).average();
 	
 	System.out.println("The avarage value is "+avg);
+	
+	//sort by last char in name
+	List<Employee> res= 	empList.stream().sorted((a,b)-> a.getName().substring(a.getName().length()-1).compareTo(b.getName().substring(b.getName().length()-1))).collect(Collectors.toList());
+	System.out.println(res);
 
 	}
 }
@@ -28,6 +32,11 @@ public class JavaStream {
 class Employee {
 	String name;
 	int salary;
+
+	@Override
+	public String toString() {
+		return "Employee [name=" + name + ", salary=" + salary + "]";
+	}
 
 	Employee(String name, int salary) {
 		this.name = name;
