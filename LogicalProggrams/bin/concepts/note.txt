@@ -31,4 +31,12 @@ if you don't have access to them). You can also exclude them through the spring.
 The reason is that we can call the static method by interface name and that static method can call the default method internally. 
 Example: Comparator::comparing, so here comparing is calling the default functionalities.
 
+8. Load external properties files
+spring.config.import = file://Users/Desktop/test.properties
+
+9.Which file is loaded first yml or properties file
+properties file
+
+10.
+
 

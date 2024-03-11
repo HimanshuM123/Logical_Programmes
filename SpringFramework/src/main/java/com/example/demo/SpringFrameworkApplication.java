@@ -15,6 +15,8 @@ import com.example.demo.pojo.Car;
 import com.example.demo.scope.MessageService;
 import com.example.demo.scope2.ClassA;
 import com.example.demo.scope2.ClassB;
+import com.example.demo.singleton.BeanScopePrototypeService;
+import com.example.demo.singleton.BeanScopeSingletonService;
 
 
 @SpringBootApplication
@@ -83,7 +85,14 @@ public class SpringFrameworkApplication {
 
 	   // Assert.isTrue(firstPrototype.equals(secondPrototype), "The same instance should be returned");
 	    
-	    
+		 AnnotationConfigApplicationContext  context = new AnnotationConfigApplicationContext(SpringFrameworkApplication.class);
+		 BeanScopeSingletonService service1 = context.getBean(BeanScopeSingletonService.class);
+		 BeanScopeSingletonService service2 = context.getBean(BeanScopeSingletonService.class);
+		 BeanScopeSingletonService service3 = context.getBean(BeanScopeSingletonService.class);
+		 
+		 BeanScopePrototypeService prototype1 = context.getBean(BeanScopePrototypeService.class);
+		 BeanScopePrototypeService prototype2 = context.getBean(BeanScopePrototypeService.class);
+		 BeanScopePrototypeService prototype3 = context.getBean(BeanScopePrototypeService.class);
 	}
 
 }
