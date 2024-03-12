@@ -40,8 +40,15 @@ public class Min_Max {
 			Integer  max_num= 	list.stream().max(Comparator.comparing(a -> a)).get(); //7
 			System.out.println(max_num);
 			
+			Integer  max_num2= list.stream().max((a,b)-> a -b).get();
+			System.out.println("max_num2 "+max_num2);
+			
+			
 			Integer  min_num= 	list.stream().min(Comparator.comparing(a -> a)).get(); //1
 			System.out.println(min_num);
+			
+			Integer  min_num2= list.stream().min((a,b)-> a -b).get();
+			System.out.println("min_num2 "+min_num2);
 
 	}
 

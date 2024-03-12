@@ -37,6 +37,14 @@ spring.config.import = file://Users/Desktop/test.properties
 9.Which file is loaded first yml or properties file
 properties file
 
-10.
+10.Springbeans real-time use
+- Singleton :
+    1. Database configuration - DB connection pool
+    2.Service Layer - stateless service which doesnt contain any mutable state
+    3.Application configuration - settings througout application
+- Prototype:
+    1.User session 
+    2.Thread safety- Threads can create multiple instances 
+    3.Heavy initialization
 
 
