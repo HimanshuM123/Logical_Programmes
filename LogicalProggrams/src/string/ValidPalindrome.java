@@ -2,7 +2,8 @@ package string;
 
 public class ValidPalindrome {
 	public static void main(String[] args) {
-		boolean result = validPalindrome("abcbah");
+//		boolean result = validPalindrome("abcbah");
+		boolean result = validPalindrome("abcdefedcbah");
 		System.out.println(result);
 	}
 
