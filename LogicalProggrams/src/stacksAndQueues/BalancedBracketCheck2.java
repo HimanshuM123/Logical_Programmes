@@ -18,7 +18,6 @@ public class BalancedBracketCheck2 {
 	}
 
 	private static boolean balancedBracket(String str) {
-
 		Stack<Character> stk = new Stack<>();
 		Map<Character, Character> hm = new HashMap<>();
 		hm.put('(', ')');

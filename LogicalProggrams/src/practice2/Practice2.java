@@ -21,41 +21,31 @@ import leetcode2.LinkedListPalimdrom;
 public class Practice2 {
 
 	public static void main(String[] args) {
+		int[] arr = { 10, 11, 12, 13, 14, 15, 16, 17, 18 };
+		int target = 12;
 
-		String str = "[{(hh)})";
+		int result = getIndex(arr, target);
 
-		boolean flag = balancedBracket(str);
-		if (flag) {
-			System.out.println("The brackets are balanced");
-		} else {
-			System.out.println("No balanced brackets");
-		}
+		System.out.println("The idex is " + result);
 
 	}
 
-	private static boolean balancedBracket(String str) {
-
-		Stack<Character> stk = new Stack<>();
-		Map<Character,Character> hm = new HashMap<>();
-		hm.put('(', ')');
-		hm.put('[', ']');
-		hm.put('{', '}');
+	private static int getIndex(int[] arr, int target) {
+		int low = 0;
+		int high = arr.length - 1;
 		
-		for (int i = 0; i < str.length(); i++) {
-			char ch = str.charAt(i);
 
-			if (hm.containsKey(ch)) {
-				stk.push(ch);
+		while (low < high) {
+			int mid = low + (high - low) / 2;
+			if (target < arr[mid]) {
+				high = mid - 1;
+			} else if (target > arr[mid]) {
+				low = mid + 1;
+			} else if(target== arr[mid]){
+				return mid;
 			}
-			if(hm.containsValue(ch)) {
-				char a = stk.pop();
-				if(hm.get(a)!= ch) {
-					return false;
-				}
-			}
-		
 		}
-		return stk.isEmpty();
 
+		return -1;
 	}
 }
