@@ -48,3 +48,29 @@ properties file
     3.Heavy initialization
 
 
+11. Can we execute @Putmapping logic inside @PostMapping
+--YES,  but it will violate the principle of Restful design
+Not recommended
+@PostMapping -> not-idepotent -- resource is not modified-- when we hit multiple requests it will save in DB multiple times
+@Putmapping -> idepotent -- resource is  modified - in DB no new resource added
+if we execute update logic in @Postmapping it will create new resource in DB every time
+
+12. Can we pass @RequestBody in @GetMapping?
+Yes, possible but not recommended
+
+13.@Controller vs @RestController
+@Restcontroller = @Controller + @ResponseBody
+if we define only @Controller spring will resolve it as HTML page , inorder to return json or text response we can use
+@ResponseBody along with ( @GetMapping (value ="/test" produces = MediaType.TEXT_PLAIN or JSON)
+
+  
+
+
+
+
+
+
+
+
+
+

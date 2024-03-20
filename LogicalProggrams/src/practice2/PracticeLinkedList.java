@@ -46,20 +46,42 @@ public class PracticeLinkedList {
 		return ele;
 	}
 	
+	private Node removeDuplicates(Node head) {
+		Node previous = null;
+		Node current = head;
+		Set<Integer> set = new HashSet<>();
+		while(current!=null) {
+			if(set.contains(current.data)) {
+				previous.next=current.next;
+			}else {
+				set.add(current.data);
+				previous= current;
+			}
+			current = current.next;
+		}
+		
+		return head;
+		
+	}
+	
 
 	public static void main(String[] args) {
 		PracticeLinkedList obj = new PracticeLinkedList();
 		obj.addLast(10);
 		obj.addLast(20);
+		obj.addLast(20);
+		obj.addLast(30);
 		obj.addLast(30);
 		obj.addLast(40);
-		obj.addLast(50);
-		obj.addLast(60);
 
 		obj.print2(obj.first);
 		Node result = obj.insertFirst(obj.first,5);
 		System.out.println();
 		obj.print2(result);
+		System.out.println();
+		Node res= obj.removeDuplicates(obj.first);
+		obj.print2(res);
+		
 		
 
 	}
