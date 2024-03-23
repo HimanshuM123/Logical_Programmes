@@ -21,31 +21,37 @@ import leetcode2.LinkedListPalimdrom;
 public class Practice2 {
 
 	public static void main(String[] args) {
-		int[] arr = { 10, 11, 12, 13, 14, 15, 16, 17, 18 };
-		int target = 12;
-
-		int result = getIndex(arr, target);
-
-		System.out.println("The idex is " + result);
-
-	}
-
-	private static int getIndex(int[] arr, int target) {
-		int low = 0;
-		int high = arr.length - 1;
+		String[] tokens = { "2", "1", "+", "3", "*" };
 		
-
-		while (low < high) {
-			int mid = low + (high - low) / 2;
-			if (target < arr[mid]) {
-				high = mid - 1;
-			} else if (target > arr[mid]) {
-				low = mid + 1;
-			} else if(target== arr[mid]){
-				return mid;
+		Stack<String> stk = new Stack<>();
+		String operators ="+-*/";
+		
+		for(String obj : tokens ) {
+			if(!operators.contains(obj)) {
+				stk.push(obj);
+			}else {
+				int a = Integer.parseInt(stk.pop());
+				int b = Integer.parseInt(stk.pop());
+				if(obj =="+") {
+					int sum = a+b;
+					System.out.println("sum"+sum);
+					stk.push(String.valueOf(sum));
+				}if(obj =="-") {
+					int sub = a-b;
+					stk.push(String.valueOf(sub));
+				}if(obj =="*") {
+					int mul = a*b;
+					stk.push(String.valueOf(mul));
+				}if(obj =="/") {
+					int div = b/a;
+					stk.push(String.valueOf(div));
+				}
+				
 			}
+						
 		}
-
-		return -1;
+		System.out.println(stk.pop());
+		
 	}
+
 }
