@@ -13,18 +13,16 @@ public class FlattenTree2 {
 			this.data = data;
 		}
 	}
-
+	TreeNode prev = null;
 	private void flatten(TreeNode root) {
-		TreeNode prev = null;
 		if (root == null) {
 			return;
 		}
 		flatten(root.right);
 		flatten(root.left);
 		root.right = prev;
-		root.left = null;
 		prev = root;
-		
+		root.left = null;	
 	}
 
 	public static void main(String[] args) {
