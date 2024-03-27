@@ -5,6 +5,13 @@ public class Employee {
 		private Integer id;
 		private Double salary;
 		
+		public Employee(String name, Integer id, Double salary) {
+			super();
+			this.name = name;
+			this.id = id;
+			this.salary = salary;
+		}
+
 		public Employee() {}
 
 		public String getName() {
