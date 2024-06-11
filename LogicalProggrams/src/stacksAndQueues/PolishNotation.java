@@ -22,7 +22,7 @@ public class PolishNotation {
 					st.push(String.valueOf(a + b));
 				}
 				if (obj == "-") {
-					st.push(String.valueOf(a + b));
+					st.push(String.valueOf(a - b));
 				}
 				if (obj == "*") {
 					st.push(String.valueOf(a * b));

@@ -12,8 +12,15 @@ import java.util.function.UnaryOperator;
 public class FunctionalInterfaceEx {
 	public static void main(String[] args) {
 		// Predicate
+		Predicate<Integer> pd1 = new Predicate<Integer>() {
+			@Override
+			public boolean test(Integer t) {
+				return t==0;
+			}
+		};
 		Predicate<Integer> pd = (i) -> i == 0;
 		System.out.println(pd.test(6));
+		System.out.println(pd1.test(6));
 
 		// consumer
 		Consumer<String> c = (s) -> System.out.println(s);

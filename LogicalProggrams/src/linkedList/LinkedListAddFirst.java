@@ -33,7 +33,6 @@ public class LinkedListAddFirst {
 			System.out.print(head.data+"  ");
 			head= head.next;
 		}
-		
 	}
 	
 	public static void main(String[] args) {

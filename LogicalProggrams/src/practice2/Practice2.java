@@ -13,45 +13,67 @@ import java.util.Stack;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.BiFunction;
+import java.util.function.BinaryOperator;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.function.UnaryOperator;
+import java.util.stream.Collectors;
 
 import binaryTree.BinaryTreeMirror;
 import binaryTree.BinaryTreeSum;
+import java8Stream.Employee;
 import leetcode2.LinkedListPalimdrom;
 
-public class Practice2 {
+public class Practice2 extends Thread {
 
 	public static void main(String[] args) {
-		String[] tokens = { "2", "1", "+", "3", "*" };
+
+		int [] numArr = {100,90,50,40,10,9,5,4,1};
 		
-		Stack<String> stk = new Stack<>();
-		String operators ="+-*/";
+		String [] romanArr = {"C","XC","L","XL","X","IX","V","IV","I"};
+		int n = 24;
 		
-		for(String obj : tokens ) {
-			if(!operators.contains(obj)) {
-				stk.push(obj);
-			}else {
-				int a = Integer.parseInt(stk.pop());
-				int b = Integer.parseInt(stk.pop());
-				if(obj =="+") {
-					int sum = a+b;
-					System.out.println("sum"+sum);
-					stk.push(String.valueOf(sum));
-				}if(obj =="-") {
-					int sub = a-b;
-					stk.push(String.valueOf(sub));
-				}if(obj =="*") {
-					int mul = a*b;
-					stk.push(String.valueOf(mul));
-				}if(obj =="/") {
-					int div = b/a;
-					stk.push(String.valueOf(div));
-				}
+		//24-> XXIV  10 10 4
+		
+		String res = toRoman(romanArr, numArr, n);
+		System.out.println(res);
+		
+		
+
+	}
+	
+	private static String toRoman(String [] romanArr,int [] numArr,int num) {
+		String roman ="";
+		
+		for(int i=0 ; i< romanArr.length;i++ ) {
+			if(num >= numArr[i]) {
+				roman = roman + romanArr[i];
+				num = num - numArr[i];
+				i=0;
 				
 			}
-						
 		}
-		System.out.println(stk.pop());
+		
+		return roman;
+		
+		
 		
 	}
-
 }
+
+// 1->2 2->1 5 ->1...
+/*
+ * 
+ * 10, 20, 30, 40, 50, 60, 70
+ * 
+ * 30 , 20 ,10 ,40, 50, 60, 70
+ * 
+ * 70,60,50,40 ,10, 20, 30
+ * 
+ * 
+ * 
+ * 
+ */

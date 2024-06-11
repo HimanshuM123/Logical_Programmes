@@ -15,6 +15,5 @@ public class BinarySearchRecur {
 		} else {
 			return binaryRecur(arr, low, mid - 1, value);
 		}
-
 	}
 }
