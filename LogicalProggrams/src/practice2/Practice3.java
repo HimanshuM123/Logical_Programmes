@@ -8,22 +8,51 @@ import java.util.Set;
 import java.util.Stack;
 
 public class Practice3 {
+	static int  value(char r)
+	 {
+	     if (r == 'I')
+	         return 1;
+	     if (r == 'V')
+	         return 5;
+	     if (r == 'X')
+	         return 10;
+	     if (r == 'L')
+	         return 50;
+	     if (r == 'C')
+	         return 100;
+	     if (r == 'D')
+	         return 500;
+	     if (r == 'M')
+	         return 1000;
+	     return -1;
+	 }
+	
+	//IC = 1 : 100 -> 99
+	// CI = 100 : 1 -> 101
+	private static int romanToInteger(String str) {
+		int res=0;
+		for(int i=0 ; i< str.length(); i++){
+			
+			int s1 = value(str.charAt(i));
+			
+			if(i+1 < str.length()) {
+				int s2 =value(str.charAt(i+1));
+				if(s1 >= s2) {
+					res = res + s1;
+				}else {
+					res = res + s2-s1;
+				}
+			}else {
+				res = res+s1;
+			}
+			
+		}
+		return 0;
+		
+	}
 	public static void main(String[] args) {
 		
-	Map<Integer,String> hm = new HashMap<>();
-	hm.put(1, "Mango");
-	hm.put(2, "Orange");
-	hm.put(3, "Apple");
-	
-	Set<Map.Entry<Integer,String>> set = hm.entrySet();
-	List<Map.Entry<Integer,String>> list = new ArrayList<>(set);
-	
-	list.sort((a,b)-> a.getValue().compareTo(b.getValue()));
-	
-	for(Map.Entry<Integer,String> obj : list) {
-		System.out.println(obj.getKey() +" "+obj.getValue());
-	}
-	
+		romanToInteger("IC");
 		
 	}
 }
