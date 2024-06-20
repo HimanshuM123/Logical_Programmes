@@ -29,12 +29,7 @@ public class RomanToInteger2 {
 				ans = ans + hm.get(s.charAt(i)+"");
 			}
 		}
-		
-		
-		
-		
-		
-		
+	
 		return ans;
 	}
 	
