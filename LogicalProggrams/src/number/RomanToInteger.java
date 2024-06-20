@@ -71,7 +71,8 @@ public class RomanToInteger {
 
      // Considering inputs given are valid
      //String str = "MCMIV";
-	 String str = "IC";
+	// String str = "IC";
+	 String str = "CIII";
      System.out.println("Integer form of Roman Numeral"
                         + " is "
                         + ob.romanToDecimal(str));
