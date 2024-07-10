@@ -16,6 +16,7 @@ public class ExecutorServiceTest {
 			System.out.println("Waiting for result");
 			Integer result=future.get();
 			System.out.println("Result is "+result);
+			System.out.println("After result printed...");
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

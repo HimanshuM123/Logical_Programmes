@@ -22,19 +22,21 @@ public class Min_Max {
 		Employee firstEmp = employees.stream()
 			      .min((e1, e2) -> e1.getId() - e2.getId())
 			      .orElseThrow(NoSuchElementException::new);
-		System.out.println("Minimum =>"+firstEmp.getId());
+		System.out.println("Minimum =>"+firstEmp.getId());  //Minimum =>3
+		
+		
+		Employee maximum = employees.stream()
+			      .min((e1, e2) -> e1.getId() + e2.getId())
+			      .orElseThrow(NoSuchElementException::new);
+		System.out.println("Maximum =>"+maximum.getId());//Maximum =>20
+		
 		
 		
 		 Employee maxSalEmp = employees.stream()
 			      .max(Comparator.comparing(Employee::getId))
 			      .orElseThrow(NoSuchElementException::new);
-		 System.out.println("Maximum =>"+maxSalEmp.getId());
+		 System.out.println("Maximum =>"+maxSalEmp.getId());//Maximum =>20
 		 
-
-			Employee max = employees.stream()
-				      .min((e1, e2) -> e1.getId() + e2.getId())
-				      .orElseThrow(NoSuchElementException::new);
-			System.out.println("Maximum2 =>"+max.getId());
 			
 			List<Integer> list = Arrays.asList(1,2,3,4,5,6,7);
 			Integer  max_num= 	list.stream().max(Comparator.comparing(a -> a)).get(); //7

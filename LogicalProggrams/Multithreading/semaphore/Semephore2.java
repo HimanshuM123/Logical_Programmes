@@ -21,7 +21,7 @@ enum Downloader {
 	}
 
 	public void download() {
-		System.out.println("Downloading data from web...");
+		System.out.println("Downloading data from web..."+Thread.currentThread().getName());
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {

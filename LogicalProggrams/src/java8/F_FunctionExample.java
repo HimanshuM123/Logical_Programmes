@@ -24,3 +24,7 @@ public class F_FunctionExample {
 	}
 
 }
+
+
+// Function -> Unary operator
+//BiFunction -> Binary Operator

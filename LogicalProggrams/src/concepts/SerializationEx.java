@@ -4,8 +4,8 @@ package concepts;
 //of a Java object
 import java.io.*;
 
-//class Pojo implements java.io.Serializable
-class Pojo
+class Pojo implements java.io.Serializable
+//class Pojo
 {
 	public int a;
 	public String b;

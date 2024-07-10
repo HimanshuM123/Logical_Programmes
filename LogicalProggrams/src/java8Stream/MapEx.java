@@ -20,14 +20,19 @@ public class MapEx {
 		hm.put(3, emp3);
 		hm.put(4, emp4);
 		// Employee with salary greater than 500
-		List<Entry<Integer, Employee>> result = hm.entrySet()
-												.stream()
-												.filter(t -> t.getValue().getSalary() > 500)
-												.collect(Collectors.toList());
+//		List<Entry<Integer, Employee>> result = hm.entrySet()
+//												.stream()
+//												.filter(t -> t.getValue().getSalary() > 500)
+//												.collect(Collectors.toList());
+//		
+//		for (Map.Entry<Integer, Employee> obj : result) {
+//			System.out.println(obj.getValue().getName());
+//		}
 		
-		for (Map.Entry<Integer, Employee> obj : result) {
-			System.out.println(obj.getValue().getName());
-		}
+		hm.entrySet()
+		.stream()
+		.filter(t -> t.getValue().getSalary() > 500)
+		.collect(Collectors.toList()).forEach(obj ->System.out.println( obj.getValue().getName()));
 	}
 }
 

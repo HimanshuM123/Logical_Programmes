@@ -34,8 +34,9 @@ Example: Comparator::comparing, so here comparing is calling the default functio
 8. Load external properties files
 spring.config.import = file://Users/Desktop/test.properties
 
-9.Which file is loaded first yml or properties file
-properties file
+9.
+which file is loaded first application.properties or   application.yml
+->application.properties
 
 10.Springbeans real-time use
 - Singleton :
@@ -63,12 +64,11 @@ Yes, possible but not recommended
 if we define only @Controller spring will resolve it as HTML page , inorder to return json or text response we can use
 @ResponseBody along with ( @GetMapping (value ="/test" produces = MediaType.TEXT_PLAIN or JSON)
 
-  
-
-
-
-
-
+14.
+REST vs RESTful
+there are no differences between REST and RESTful as far as APIs are concerned. 
+REST is the set of constraints. RESTful refers to an API adhering to those constraints. 
+It can be used in web services, applications, and software.
 
 
 

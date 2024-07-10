@@ -10,36 +10,40 @@ import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Set;
 import java.util.Stack;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class Practice {
 	public static void main(String[] args) {
-		int[] arr = { 10, 20, 35, 50, 75, 80 };
-		int[] result = findPair(arr, 70);
-		System.out.println(Arrays.toString(result));
-	}
-
-	private static int[] findPair(int[] arr, int target) {
-		int[] result = new int[2];
-
-		int left = 0;
-		int right = arr.length - 1;
-
-		while (left <= right) {
-			int sum = arr[left] + arr[right];
-
-			if (sum > target) {
-				right--;
-			}
-			if (sum < target) {
-				left++;
-			} if(sum ==target) {
-				result[0] = arr[left];
-				result[1] = arr[right];
-				break;
-			}
-
-		}
-
-		return result;
+	
+	Predicate<Integer> p = (i) -> {
+		return i%2==0;
+	}	;
+	
+	boolean result =p.test(4);
+	System.out.println(result);
+	
+	Consumer<String> c = (con)->{
+		System.out.println(con);
+	};
+		
+	c.accept("Hi..consumer");
+	
+	Supplier<String> sup =()->{
+		return "Supplier....";
+	};
+	
+	String su = sup.get();
+	System.out.println(su);
+	
+	Function<Integer, String> fun = (i)->{
+		return String.valueOf(i);
+	};
+	
+	System.out.println(fun.apply(6));
+	
+	
 	}
 }
