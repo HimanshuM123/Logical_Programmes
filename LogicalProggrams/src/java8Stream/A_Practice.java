@@ -1,23 +1,46 @@
 package java8Stream;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.BiFunction;
+import java.util.function.BinaryOperator;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
 
 public class A_Practice {
 	public static void main(String[] args) {
-		List<Integer> al = Arrays.asList(2,7,7,2,6,6);
 		
-	List<Integer> result =	al.stream().distinct()
-			.collect(Collectors.toList());
-	//result.forEach(o -> System.out.println(o));
-	
-	Optional<Integer> res= al.stream().min((a,b)-> a.compareTo(b));
-	//System.out.println(res.get());
-	
-	Integer sum = al.stream().reduce(0,(a,b)-> a+b);
-	System.out.println(sum);
+		
+		
+		Function<String,String> fun = (str)->{
+			return str.toUpperCase();
+		};
+		
+		System.out.println(fun.apply("acsfdfdgdh"));
+		
+		BiFunction<String, String, Integer> BiFun = (a,b)->{
+			return Integer.parseInt(a+b);
+		};
+		
+		System.out.println(BiFun.apply("4", "6"));
+		
+		BinaryOperator<String> BiOp = (str1,str2)->{
+			return str1+str2;
+		};
+		
+		System.out.println(BiOp.apply("a", "bcd"));
+		
+		UnaryOperator<String> u = (str)->{
+			return str.toLowerCase();
+		};
+		
+		System.out.println(u.apply("HUSSHDUDUHSUJ"));
 	
 	
 	}
