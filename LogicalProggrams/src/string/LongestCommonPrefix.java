@@ -2,37 +2,48 @@ package string;
 
 public class LongestCommonPrefix {
 
-	public String longestCommonPrefix(String[] arr)
-    {
-       int n = arr.length;
-       // take temp_prefix string and assign first element of arr : a.
-       String result = arr[0];
-      
-       // Iterate for rest of element in string.
-       for(int i = 1; i < n; i++){
-            // .indexOf() return index of that substring from string.
-            while(arr[i].indexOf(result) != 0){
-            	System.out.println(arr[i]);
-            	System.out.println(arr[i].indexOf(result));
-              
-                // update matched substring prefx
-                result = result.substring(0, result.length()-1);
-              
-                // check for empty case. direct return if true..
-                if(result.isEmpty()){
-                    return "-1";
-                }
-            }
-        }
-        return result;
-    }
+	public String longestCommonPrefix(String[] arr) {
+		int n = arr.length;
+		String result = arr[0];
 
-    /* Driver Function to test other function */
-    public static void main(String[] args)
-    {
-    	LongestCommonPrefix gfg = new LongestCommonPrefix();
-        String[] input = {"geeksforgeeks", "geeks", "geek", "geezer"};
-        System.out.println( "The longest Common Prefix is : " +
-                                   gfg.longestCommonPrefix(input));
-    }
+		for (int i = 1; i < n; i++) {
+			while (arr[i].indexOf(result) != 0) {
+				result = result.substring(0, result.length() - 1);
+				System.out.println("result " + result);
+
+				if (result.isEmpty()) {
+					return "-1";
+				}
+			}
+		}
+		return result;
+	}
+
+	public static void main(String[] args) {
+		LongestCommonPrefix gfg = new LongestCommonPrefix();
+		String[] input = { "geeksforgeeks", "geeks", "geek", "geezer" };
+		System.out.println("The longest Common Prefix is : " + gfg.longestCommonPrefix(input));
+	}
 }
+
+/*
+geeksforgeeks   geeks
+
+geeksforgeek
+geeksforgee
+geeksforge
+geeksforg
+geeksfor
+geeksfo
+geeksf
+geeks
+
+geeks  geek
+geek
+
+geek geezer
+gee
+
+=gee
+
+*/
