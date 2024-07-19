@@ -3,8 +3,9 @@ package concurrentHashMap;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MapEx1 extends Thread {
-
+public class MapEx1 
+//extends Thread
+{
 	public static void main(String arg[]) throws InterruptedException {
 		HashMap<Integer, String> map = new HashMap<>();
 		map.put(101, "A");
