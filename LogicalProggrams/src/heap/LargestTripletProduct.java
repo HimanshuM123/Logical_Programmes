@@ -30,3 +30,19 @@ public class LargestTripletProduct {
         largestTripletMultiplication(arr, n);
 	}
 }
+
+/*
+
+Input : arr[] = {1, 2, 3, 4, 5}
+Output :-1
+        -1
+         6
+         24
+         60
+Explanation : for i = 2 only three elements 
+are there {1, 2, 3} so answer is 6. For i = 3
+largest three elements are {2, 3, 4} their
+product is 2*3*4 = 24 ....so on  
+
+
+*/
