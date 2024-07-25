@@ -14,16 +14,15 @@ public class BuyStock {
 		int max_profit = 0;
 
 		for (int i = 0; i < arr.length; i++) {
-
 			if (arr[i] < min_val) {
 				min_val = arr[i];
 			} else if (arr[i] - min_val > max_profit) {
 				max_profit = arr[i] - min_val;
+
 			}
 
 		}
 		return max_profit;
-
 	}
 
 }
