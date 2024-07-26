@@ -7,5 +7,6 @@
 	<classpathentry kind="src" path="LeetCode"/>
 	<classpathentry kind="src" path="Logical"/>
 	<classpathentry kind="src" path="Concepts"/>
+	<classpathentry kind="src" path="LeetCode75"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
