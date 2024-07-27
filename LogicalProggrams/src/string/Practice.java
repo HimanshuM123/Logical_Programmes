@@ -4,30 +4,22 @@ import java.util.Arrays;
 
 public class Practice {
 	 public static void main(String[] args) {
-		 String str ="loveleetcode";
-			int index = firstUniqChar(str);
-			System.out.println(index);
+		 String str1 = "braggg";
+			String str2 = "gggrap";
+			System.out.println(isAnagram(str1,str2));
 	}
 	 
-	 private static int firstUniqChar(String str) {
-		 int index =0;
-		 
-		 int [] freq = new int[26];
-		 Arrays.fill(freq, -1);
-		 
-		 for(Character ch : str.toCharArray()) {
-			 freq[ch-'a']++;
-		 }
-		 
-		 for(int i=0; i<str.length(); i++){
-	            if(freq[str.charAt(i)-'a']==0){
-	                return i;
-	            }
-	        }
-		 
-		 
-		 
-		 return -1;
+	 private static boolean isAnagram(String str1,String str2) {
+		StringBuffer buffer = new StringBuffer(str1);
+		
+		for(int i=0; i<str1.length();i++) {
+			char ch = str1.charAt(i);
+			if(buffer.indexOf(ch+"")!=-1) {
+				int index = buffer.indexOf(ch+"");
+				buffer.deleteCharAt(index);
+			}
+		}
+		return buffer.length()==0;
 	 }
 
 }

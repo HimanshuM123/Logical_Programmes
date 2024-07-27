@@ -14,8 +14,13 @@ public class BuyStock_1 {
 		for(int i=0; i< arr.length;i++) {
 			if(arr[i]<min_val) {
 				min_val =arr[i];
-			}else if(arr[i]-min_val > profit) {
-				profit =arr[i]-min_val;
+			}
+//			else if(arr[i]-min_val > profit) {
+//				profit =arr[i]-min_val;
+//			}
+			else {
+				profit =Math.max(profit, arr[i]-min_val);
+				
 			}
 		}
 
