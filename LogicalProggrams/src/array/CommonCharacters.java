@@ -6,7 +6,8 @@ import java.util.List;
 
 public class CommonCharacters {
 	public static void main(String[] args) {
-		String [] arr = {"bella","label","roller"};
+		//String [] arr = {"bella","label","roller"};
+		String [] arr = {"bbbb","bbbbb"};
 		List<String> res =commonChars(arr);
 		System.out.println(res);
 	}
@@ -14,7 +15,7 @@ public class CommonCharacters {
 	private static List<String> commonChars(String[] str){
 		List<String> common_chars = new ArrayList<>();
 		int [] min_freq = new int[26];
-		Arrays.fill(min_freq, Integer.MAX_VALUE);
+		Arrays.fill(min_freq, Integer.MAX_VALUE); //fill array with max values
 		
 		for(String current_string : str) {
 			int [] char_freq = new int[26];

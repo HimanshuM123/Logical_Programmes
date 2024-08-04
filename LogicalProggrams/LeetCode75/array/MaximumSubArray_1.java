@@ -1,7 +1,6 @@
 package array;
 
-
-public class MaximumSubArray1 {
+public class MaximumSubArray_1 {
 	public static void main(String[] args) {
 		int [] nums = {-2,1,-3,4,-1,2,1,-5,4};
 		int result = maximumSubArray(nums);
@@ -10,21 +9,17 @@ public class MaximumSubArray1 {
 	}
 
 	private static int maximumSubArray(int [] nums) {
-		int curr=0;
-		int res =0;
-		for(int i=0; i< nums.length;i++) {
-		  curr = curr + nums[i];
-			if(curr < 0) {
-				curr =0;
-			}else {
-				res = Math.max(res, curr);
-			}
-		}
+		int res = nums[0];
+		int curr_sum =0;
 		
+		for(int i=0; i<nums.length;i++) {
+			curr_sum = Math.max(curr_sum, 0);
+			curr_sum = curr_sum +nums[i];
+			res = Math.max( res,curr_sum);
+		}
 		return res;
 	}
 }
-
 
 /*
 nums =[-2,1,-3,4,-1,2,1-5,4];

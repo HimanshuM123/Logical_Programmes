@@ -4,22 +4,27 @@ import java.util.Arrays;
 
 public class Practice {
 	 public static void main(String[] args) {
-		 String str1 = "braggg";
-			String str2 = "gggrap";
+		 String str1="ACBD^";
+			String str2= "^DCBL";
 			System.out.println(isAnagram(str1,str2));
 	}
 	 
 	 private static boolean isAnagram(String str1,String str2) {
-		StringBuffer buffer = new StringBuffer(str1);
 		
-		for(int i=0; i<str1.length();i++) {
-			char ch = str1.charAt(i);
-			if(buffer.indexOf(ch+"")!=-1) {
-				int index = buffer.indexOf(ch+"");
-				buffer.deleteCharAt(index);
-			}
-		}
-		return buffer.length()==0;
+		 StringBuffer bf = new StringBuffer(str2);
+		 for(Character ch : str1.toCharArray()) {
+			 
+			 int index = bf.indexOf(ch+"");
+			 
+			 if(index !=-1) {
+				 bf.deleteCharAt(index);
+			 }
+			 
+			 
+		 }
+		 
+		 System.out.println(bf.toString());
+		 return bf.length()==0;
 	 }
 
 }

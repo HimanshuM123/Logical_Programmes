@@ -2,11 +2,9 @@ package array;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
-public class Practice {
+public class CommonCharacters2 {
 	public static void main(String[] args) {
 
 		// String [] arr = {"bella","label","roller"};
@@ -19,7 +17,7 @@ public class Practice {
 		List<String> list = new ArrayList<>();
 		int[] countArray = new int[256];
 		Arrays.fill(countArray, Integer.MAX_VALUE);
-		System.out.println(Arrays.toString(countArray));
+		//System.out.println(Arrays.toString(countArray));
 		
 		for(String obj : arr) {
 			int[] freqArray = new int[256];
@@ -33,7 +31,7 @@ public class Practice {
 				
 			}
 			
-			System.out.println(Arrays.toString(countArray));
+			//System.out.println(Arrays.toString(countArray));
 			
 		}
 		
@@ -48,5 +46,6 @@ public class Practice {
 		return list;
 
 	}
+
 
 }
