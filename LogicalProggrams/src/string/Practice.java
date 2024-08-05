@@ -3,28 +3,31 @@ package string;
 import java.util.Arrays;
 
 public class Practice {
-	 public static void main(String[] args) {
-		 String str1="ACBD^";
-			String str2= "^DCBL";
-			System.out.println(isAnagram(str1,str2));
+	public static void main(String[] args) {
+		String str = "loveleetcode";
+		int index = firstUniqChar(str);
+		System.out.println(index);
 	}
-	 
-	 private static boolean isAnagram(String str1,String str2) {
+
+	private static int firstUniqChar(String str) {
+		int[] arr = new int[256];
+		Arrays.fill(arr, -1);
 		
-		 StringBuffer bf = new StringBuffer(str2);
-		 for(Character ch : str1.toCharArray()) {
-			 
-			 int index = bf.indexOf(ch+"");
-			 
-			 if(index !=-1) {
-				 bf.deleteCharAt(index);
-			 }
-			 
-			 
-		 }
-		 
-		 System.out.println(bf.toString());
-		 return bf.length()==0;
-	 }
+		for(int i=0; i< str.length();i++) {
+			arr[str.charAt(i)]++;
+		}
+		
+		for(int i=0; i< str.length();i++) {
+			if(arr[str.charAt(i)]==0) {
+				return i;
+			}
+		}
+		
+		
+		
+
+		return -1;
+
+	}
 
 }
