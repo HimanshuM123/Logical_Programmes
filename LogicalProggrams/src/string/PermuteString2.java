@@ -10,7 +10,7 @@ public class PermuteString2 {
 
 	private static void generatePermute(String str, String asf) {
 		if (str.length() == 0) {
-			System.out.println(asf);
+			System.out.println("--"+asf);
 			return;
 		}
 		for (int i = 0; i < str.length(); i++) {
@@ -18,6 +18,7 @@ public class PermuteString2 {
 			String left = str.substring(0, i);
 			String right = str.substring(i + 1);
 			String result = left + right;
+			System.out.println(result);
 			generatePermute(result, asf + ch);
 
 		}

@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ConcurMapEx2 extends Thread {
 
 	// Creating a static HashMap class object
-	static Map<Integer, String> map = new ConcurrentHashMap<>();
+	static ConcurrentHashMap<Integer, String> map = new ConcurrentHashMap<>();
 
 	// run() method for the thread
 	public void run() {

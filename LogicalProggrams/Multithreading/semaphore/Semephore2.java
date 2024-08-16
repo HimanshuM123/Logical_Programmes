@@ -50,3 +50,21 @@ public class Semephore2 {
 	}
 
 }
+/*
+
+
+Downloading data from web...pool-1-thread-10
+Downloading data from web...pool-1-thread-11
+Downloading data from web...pool-1-thread-5
+Downloading data from web...pool-1-thread-12
+Downloading data from web...pool-1-thread-9
+Downloading data from web...pool-1-thread-8
+Downloading data from web...pool-1-thread-7
+Downloading data from web...pool-1-thread-3
+Downloading data from web...pool-1-thread-2
+Downloading data from web...pool-1-thread-1
+Downloading data from web...pool-1-thread-6
+Downloading data from web...pool-1-thread-4
+
+
+*/
