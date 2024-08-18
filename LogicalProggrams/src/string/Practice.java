@@ -4,31 +4,30 @@ import java.util.Arrays;
 
 public class Practice {
 	public static void main(String[] args) {
-		String str = "ABC";
-		generatePermute(str, "");
+		String s = "abc";
+		String t = "ahbgdc";
+		boolean result = isSubstring(s,t);
+		System.out.println(result);
 	}
 
 	
-	private static void generatePermute(String str , String asf) {
+	private static boolean  isSubstring(String s,String t) {
+		int i=0;
+		int j=0;
 		
-	//base case
-		if(str.length()==0) {
-			
-			System.out.println(asf);
-			return;
+		int len1 =s.length();
+		int len2=t.length();
+		
+		while(i < len1 && j < len2) {
+			if(s.charAt(i)==t.charAt(j)) {
+				i++;
+				j++;
+			}
+			else {
+				j++;
+			}		
 		}
-		
-		for(int i=0; i<str.length();i++) {
-			Character ch = str.charAt(i);
-			String left = str.substring(0,i);
-			String right = str.substring(i+1);
-			String result = left+right;
-			System.out.println("result =>"+result);
-			generatePermute(result,asf+ch);
-			
-			
-		}
-		
+		return i==s.length();
 	}
 	
 

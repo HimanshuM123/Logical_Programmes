@@ -4,48 +4,40 @@ import java.util.Stack;
 
 public class Practice {
 	public static void main(String[] args) {
-		String[] tokens = { "4", "13", "5", "/", "+" };
-		String operators = "+-*/";
-		int result = evalutePolish(tokens,operators);
+		String inputStr= "(a+b)+((c+d))";
+		
+		boolean result = duplicates(inputStr);
 		System.out.println(result);
 		
 	}
 	
-	private static int evalutePolish(String[] tokens, String operators) {
-		Stack<String> stk = new Stack<>();
-		for(String obj : tokens) {
-			if(!operators.contains(obj)) {
-				stk.push(obj);
+	private static boolean duplicates(String str) {
+		Stack<Character> stk = new Stack<>();
+		
+		for(Character ch : str.toCharArray()) {
+			if(ch ==')') {
+				if(stk.peek()=='(') {
+					return true;
+				}
+				while( stk.peek()!='(') {
+					stk.pop();
+				}
+				
+				stk.pop();
+				
+				
+				
 			}else {
-				int a = Integer.parseInt(stk.pop());
-				int b = Integer.parseInt(stk.pop());
-				if(obj =="+") {
-					int c = a+b;
-					stk.push(String.valueOf(c));
-				}
-				if(obj =="-") {
-					int c = a-b;
-					stk.push(String.valueOf(c));
-				}
-				if(obj =="*") {
-					int c = a*b;
-					stk.push(String.valueOf(c));
-				}
-				if(obj =="/") {
-					int c = b/a;
-					stk.push(String.valueOf(c));
-				}
-				
-				
+				stk.push(ch);
 			}
+			
+			
 		}
-		return Integer.parseInt(stk.peek());
+		
+		return false;
+		
 		
 	}
 	
 }
 
-
-
-//["2", "1", "+", "3", "*"] -> ((2 + 1) * 3) -> 9
-//["4", "13", "5", "/", "+"] -> (4 + (13 / 5)) -> 6

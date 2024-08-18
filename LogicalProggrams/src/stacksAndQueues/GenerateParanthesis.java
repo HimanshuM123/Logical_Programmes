@@ -13,29 +13,29 @@ class GenerateParanthesis {
    
 
     public static List<String> generateParenthesis(int n) {
-        dfs(new StringBuilder(), 0, n);
+        dfs("", 0, n);
         return res;
     }
 
-    private static void dfs(StringBuilder sb, int close, int n) {
+    private static void dfs(String str, int close, int open) {
         // Base case: if no open or close parentheses left
-        if (n == 0 && close == 0) {
-            res.add(sb.toString());
+        if (open == 0 && close == 0) {
+            res.add(str);
             return;
         }
 
         // Add an open parenthesis if we still have some available
-        if (n > 0) {
-            sb.append('(');
-            dfs(sb, close + 1, n - 1);
-            sb.setLength(sb.length() - 1);
+        if (open > 0) {
+        	str=  str+"(";
+            dfs(str, close + 1, open - 1);
+            str = str.substring(0,str.length()-1); //delete the last element
         }
 
         // Add a close parenthesis if there's a matching open one
         if (close > 0) {
-            sb.append(')');
-            dfs(sb, close - 1, n);
-            sb.setLength(sb.length() - 1);
+        	str=  str+")";
+            dfs(str, close - 1, open);
+            str = str.substring(0,str.length()-1);//delete the last element
         }
     }
 }
