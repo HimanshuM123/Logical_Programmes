@@ -25,10 +25,10 @@ public class GetSubsequence {
 		ArrayList<String> list = getSubsequence(rest);
 		
 		ArrayList<String> result = new ArrayList<>();
-		for(String obj :list) {
+		for(String obj :list) {//- +E(bc)
 			result.add(""+obj);
 		}
-		for(String obj :list) {
+		for(String obj :list) {//a +E(bc)
 			result.add(ch+obj);
 		}
 		return result;
