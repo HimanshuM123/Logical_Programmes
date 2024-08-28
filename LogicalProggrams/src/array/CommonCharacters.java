@@ -6,8 +6,8 @@ import java.util.List;
 
 public class CommonCharacters {
 	public static void main(String[] args) {
-		//String [] arr = {"bella","label","roller"};
-		String [] arr = {"bbbb","bbbbb"};
+		String [] arr = {"bella","label","roller"};
+//		String [] arr = {"bbbb","bbbbb"};
 		List<String> res =commonChars(arr);
 		System.out.println(res);
 	}

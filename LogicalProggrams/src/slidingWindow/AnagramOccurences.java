@@ -22,14 +22,15 @@ public class AnagramOccurences {
 	}
 
 	static int search(String pat, String txt) {
-
+//forxxorfxdofr
+		//for
 		int n = txt.length();
 		int[] arr = new int[26];
 		for (int i = 0; i < pat.length(); i++) {
 			char ch = pat.charAt(i);
 			arr[ch - 'a']++;
 		}
-
+//[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
 		int i = 0;
 		int j = 0;
 		int result = 0;

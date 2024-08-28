@@ -7,13 +7,11 @@ public class RemoveDuplicatesFromSortedArray {
 
 		int length = removeDuplicates(array);
 		System.out.println("Length after removing duplicates: " + length);
-
 	}
 
 	private static int removeDuplicates(int[] array) {
 		int index = 1;
 		for (int i = 1; i < array.length; i++) {
-
 			if (array[i - 1] != array[i]) {
 				index++;
 			}

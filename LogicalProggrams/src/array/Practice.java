@@ -9,29 +9,39 @@ import java.util.Stack;
 
 public class Practice {
 	public static void main(String[] args) {
-
-		// int [] arr = {1,2,3};
-		int[] arr = { 1, 2, 9 };
-		// int [] arr = {9,9,9};
-		// int [] arr = {1,9,9};
-		System.out.println(Arrays.toString(pluseOne(arr)));
-
+		int [] arr = {7,1,5,3,6,4};
+		int result = maxProfit(arr);
+		System.out.println(result);
 	}
 
-	private static int[] pluseOne(int[] arr) {
-
-		int length = arr.length;
-
-		for (int i = length - 1; i > 0; i--) {
-			if(arr[i]<9) {
-				arr[i]++;
-				return arr;
-			}
-			arr[i]=0;
-		}
+	
+	    public static int maxProfit(int[] prices) {
+	    	
+	    	int left =0;
+	    	int right=1;
+	    	int profit =Integer.MIN_VALUE;
+	    	while(right < prices.length) {
+	    		
+	    		if(prices[left]<prices[right]) {
+	    			int diff=prices[right]-prices[left];
+	    			profit = Math.max(profit, diff);
+	    			
+	    		}else {
+	    			left = right;
+	    		}
+	    		
+	    		right++;
+	    		
+	    	}
+	    	
+	    	return profit;
+	    	
+	    }
 		
-		return new int[3];
-
+		
+		
 	}
 
-}
+	
+	
+
