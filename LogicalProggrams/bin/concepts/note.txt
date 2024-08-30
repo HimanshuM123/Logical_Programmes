@@ -85,5 +85,39 @@ HTML	         5				|   5
 CSS	             3				|   3
 
 
+16.
+Resttemplate methods
+ public UserData getUserData()
+    {
+        return rest.getForObject(
+            "http://localhost:8080/RestApi/getData",
+            UserData.class);
+    }
+ 
+    // Method
+    public ResponseEntity<UserData> post(UserData user)
+    {
+        return rest.postForEntity(
+            "http://localhost:8080/RestApi", user,
+            UserData.class, "");
+    }
+    
+GET
+getForEntity()
+getForObject() 
 
+POST
+postForEntity() 
+postForLocation()
+postForObject() 
+
+PATCH
+patchForObject()
+
+ANY
+exchange() 
+execute()
+
+DELETE
+delete()
 
