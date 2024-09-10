@@ -34,6 +34,8 @@ Example: Comparator::comparing, so here comparing is calling the default functio
 8. Load external properties files
 spring.config.import = file://Users/Desktop/test.properties
 
+@PropertySource(value = "classpath:aaa.properties")
+
 9.
 which file is loaded first application.properties or   application.yml
 ->application.properties
@@ -120,4 +122,15 @@ execute()
 
 DELETE
 delete()
+
+
+17.
+is singleton class thread safe
+No, a singleton class is not inherently thread-safe, and explicit steps must be taken to make it so. Thread safety is important for singleton classes in multi-threaded environments. 
+ 
+Here are some ways to make a singleton class thread-safe: 
+ 
+Java
+Create the instance variable at class loading, synchronize the getInstance() method, or use a synchronized block inside the if loop and volatile variable
+
 

@@ -23,6 +23,8 @@ public class CodingInterview {
 		System.out.println("Numbers starts with 1 ->");
 		//List<String> result =list2.stream().map( a -> a+"").filter(b -> b.startsWith("1")).collect(Collectors.toList());
 		List<String> result =list2.stream().map( a -> a.toString()).filter(b -> b.startsWith("1")).collect(Collectors.toList());
+		//List<Integer> res =	list2.stream().map(o-> o+"").filter(b -> b.startsWith("1")).map(i -> Integer.parseInt(i)).collect(Collectors.toList());
+
 		result.forEach(x -> System.out.print(x+" "));
 		System.out.println();
 		

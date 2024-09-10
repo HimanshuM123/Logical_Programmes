@@ -4,25 +4,35 @@ import java.util.Arrays;
 
 public class Practice {
 	public static void main(String[] args) {
-		
-		String[] input = { "geeksforgeeks", "geeks", "geek", "geezer" };
-		System.out.println("The longest Common Prefix is : " + longestCommonPrefix1(input));
+		String str1= "ABCJ";
+		String str2= "ADBC";
+		boolean res = anagram(str1,str2);
+		if(res) {
+			System.out.println("This is anagram");
+		}else {
+			System.out.println("This is NOT anagram ");
+		}	
 	}
 
-	private static String longestCommonPrefix1(String[] arr) {
-		String res = arr[0];
+	private static boolean  anagram(String str1, String str2) {
 		
-		for(int i =1; i<arr.length;i++) {
-			while(arr[i].indexOf(res)!=0) {
-				
-				res = res.substring(0, res.length()-1);
-				
-				
-			}
+		int count[] = new int[256];
+		for(int i=0; i<str1.length();i++) {
+			count[str1.charAt(i)-'0']++;
+			count[str2.charAt(i)-'0']--;
 		}
 		
-		return res;
+		for(int j =0; j <count.length;j++) {
+			if(count[j]!=0) {
+				return false;
+			}
+		}
+		return true;
+		
+		}
+		
+		
 
-	}
+	
 
 }

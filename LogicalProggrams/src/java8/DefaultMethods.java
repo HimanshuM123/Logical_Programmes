@@ -4,7 +4,10 @@ interface Sayable4{
     // Default method   
     default void say(){  
         System.out.println("Hello, this is default method");  
-    }  
+    }
+    default void say2(){  
+        System.out.println("Hello, this is another default method");  
+    }
     // Abstract method  
     void sayMore(String msg);  
 }  
