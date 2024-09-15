@@ -4,35 +4,40 @@ import java.util.Arrays;
 
 public class Practice {
 	public static void main(String[] args) {
-		String str1= "ABCJ";
-		String str2= "ADBC";
-		boolean res = anagram(str1,str2);
-		if(res) {
-			System.out.println("This is anagram");
-		}else {
-			System.out.println("This is NOT anagram ");
-		}	
+		boolean result = validPalindrome("abcdefedcbah");
+		System.out.println(result);
 	}
 
-	private static boolean  anagram(String str1, String str2) {
-		
-		int count[] = new int[256];
-		for(int i=0; i<str1.length();i++) {
-			count[str1.charAt(i)-'0']++;
-			count[str2.charAt(i)-'0']--;
-		}
-		
-		for(int j =0; j <count.length;j++) {
-			if(count[j]!=0) {
-				return false;
+	private static boolean validPalindrome(String str) {
+		int left = 0;
+		int right = str.length() - 1;
+		while (left < right) {
+			if (str.charAt(left) != str.charAt(right)) {
+				boolean x = helper(str, left + 1, right);
+				boolean y = helper(str, left, right - 1);
+				return x || y;
+
 			}
+
+			left++;
+			right--;
+		}
+		return false;
+
+	}
+
+	private static boolean helper(String str, int left, int right) {
+
+		while (left < right) {
+			if (str.charAt(left) != str.charAt(right)) {
+				return false;
+
+			}
+
+			left++;
+			right--;
 		}
 		return true;
-		
-		}
-		
-		
-
-	
+	}
 
 }
