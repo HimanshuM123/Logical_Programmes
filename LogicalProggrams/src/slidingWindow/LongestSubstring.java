@@ -18,13 +18,15 @@ public class LongestSubstring {
 			set.add(str.charAt(i));
 			result = Math.max(result, i-j+1);
 		}
+		
 		return result;
 	}
 
 	public static void main(String[] args) {
-		String str ="abcabcbb";
+		String str ="abcabcd";
 		int result = lenghtOfLongestSubStr(str);
 		System.out.println(result);
+		
 		
 	}
 }
@@ -32,6 +34,6 @@ public class LongestSubstring {
 /*
 abcabcbb  
 
--> 3   abc
+-> 4   abcd
 
 */

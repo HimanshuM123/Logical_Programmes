@@ -12,42 +12,43 @@ import java.util.Stack;
 public class Practice {
 
 	public static void main(String[] args) {
-		String str = "javaconceptoftheday";
-		Map<Character,Integer> hm = new LinkedHashMap<>();
-		
-		int longestLength=0;
-		String longestString ="";
-		int result=0;
-		for(int i=0; i< str.length();i++) {
-			if(hm.get(str.charAt(i))==null) {
-				hm.put(str.charAt(i), i);
-			}else {
-				i= hm.get(str.charAt(i));
-				hm.clear();
-				
-			}
-			result = hm.size();
-			if(result > longestLength) {
-				longestLength = result;
-				longestString = hm.keySet().toString();
-			}
+		int[] arr = { 7, 1, 5, 3, 6, 4 };
+		int result = maxProfit(arr);
+		System.out.println(result);
+
+	}
+
+	private static int maxProfit(int[] arr) {
+		int profit = 0;
+		int left = 0;
+		int right = 1;
+
+		while (right < arr.length) {
+
+			if (arr[left] < arr[right]) {
+
+				int diff = arr[right] - arr[left];
+				profit = Math.max(profit, diff);
 			
-			
+
+			} else {
+				left = right;
+			}
+
+			right++;
 		}
-		System.out.println(longestString);
-		
+
+		return profit;
+
 	}
 
 }
 
 /*
-
-j=0
-a=1
-v=2
-a=3
-
-
-
  * 
- * */
+ * j=0 a=1 v=2 a=3
+ * 
+ * 
+ * 
+ * 
+ */
