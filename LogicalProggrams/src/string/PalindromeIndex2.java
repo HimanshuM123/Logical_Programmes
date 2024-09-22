@@ -1,27 +1,29 @@
 package string;
 
-public class PalindromeIndex {
+public class PalindromeIndex2 {
 	public static void main(String[] args) {
-
-		int result = palindromeIndex("bcbc");
+		//bcbc=0
+		//cbcd =3
+		//  abdcba =2
+		int result = palindromeIndex("abdcba");
 		System.out.println(result);
 	}
 	
 	static int palindromeIndex(String s) {
 		int palindromeIndex = -1;
-		int len = s.length();
-
-		for (int i = 0; i < len / 2; i++) {
-			if (s.charAt(i) != s.charAt(len - i - 1)) {
-				if (i + 1 < len) {
-					boolean isRightStringValidPalindrome = isValidPalindrome(s.substring(i + 1, len - i));
-					if (isRightStringValidPalindrome)
-						return i;
-					return len - i - 1;
-				}
+		int left =0;
+		int right = s.length()-1;
+		
+		while(left< right) {
+			if(s.charAt(left)!= s.charAt(right)) {
+				boolean isRightStringValidPalindrome = isValidPalindrome(s.substring(left+1,right+1));
+				if (isRightStringValidPalindrome)
+					return left;
+				return right;
 			}
+			left++;
+			right--;
 		}
-
 		return palindromeIndex;
 
 	}
