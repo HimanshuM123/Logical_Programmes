@@ -12,7 +12,7 @@ public class RevDigits {
 				.chars()
 				.mapToObj(c -> (char)c)
 				.sorted((a,b)->-1)
-				.map(String::valueOf)
+				.map(d -> String.valueOf(d))
 				.collect(Collectors.joining()));
 		System.out.println(rev_num);//23974
 		
