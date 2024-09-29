@@ -10,6 +10,11 @@ public class SumDigits {
 		int sum = stream.map(Character::getNumericValue).reduce(0, (a, b) -> a + b);
 		System.out.println(sum);
 		
+		int sum2 = String.valueOf(number)
+				.chars()
+				.map(u -> Integer.parseInt((u-'0')+""))
+				.reduce(0, (a, b) -> a + b);
+		System.out.println(sum2);
 		
 		
 	}
