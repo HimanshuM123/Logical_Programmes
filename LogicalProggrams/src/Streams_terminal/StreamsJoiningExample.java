@@ -11,6 +11,7 @@ public class StreamsJoiningExample {
 		return StudentDataBase.getAllStudents().stream()
 				.map(Student::getName)
 				.collect(Collectors.joining());
+//Joining1 AdamJennyEmilyDaveSophiaJames
 
 	}
 	
@@ -18,6 +19,7 @@ public class StreamsJoiningExample {
 		return StudentDataBase.getAllStudents().stream()
 				.map(Student::getName)
 				.collect(Collectors.joining("-"));
+//Joining2 Adam-Jenny-Emily-Dave-Sophia-James
 
 	}
 	
@@ -25,6 +27,7 @@ public class StreamsJoiningExample {
 		return StudentDataBase.getAllStudents().stream()
 				.map(Student::getName)
 				.collect(Collectors.joining("-","(",")"));
+//Joining3 (Adam-Jenny-Emily-Dave-Sophia-James)
 
 	}
 
