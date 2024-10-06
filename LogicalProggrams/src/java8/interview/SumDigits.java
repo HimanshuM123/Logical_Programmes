@@ -17,6 +17,7 @@ public class SumDigits {
 		System.out.println(sum2);
 		
 		
+		
 	}
 
 }

@@ -19,12 +19,11 @@ public class DuplicateCharsInString {
 				hm.put(obj, 1);
 			}
 		}
-		//System.out.print(hm);
-		Set<Character> keys=hm.keySet();
-		for(Character key:keys) {
-			if(hm.get(key)>1) {
-				System.out.print(key+" ");
+		
+		hm.forEach((k,v)->{
+			if(hm.get(k)>1) {
+				System.out.print(k+"  ");
 			}
-		}
+		});
 	}
 }
