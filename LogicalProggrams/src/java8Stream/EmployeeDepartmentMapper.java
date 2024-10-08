@@ -46,6 +46,23 @@ public class EmployeeDepartmentMapper {
         departmentToEmployee4s.forEach((department, names) -> 
             System.out.println(department + ": " + names)
         );
+        
+        Map<Integer, String> hm = new HashMap<>();
+		hm.put(4, "Apple");
+		hm.put(2, "Grapes");
+		hm.put(3, "Orange");
+		hm.put(1, "Banana");
+		
+		
+
+		
+		Map<Integer, String> map3  =	hm.entrySet().stream().sorted((a,b)-> a.getValue().compareTo(b.getValue())).collect(Collectors.toMap(p ->p.getKey(), s->s.getValue()));
+		System.out.println(map3);
+		//{1=Banana, 2=Grapes, 3=Orange, 4=Apple}
+		
+		List<String> list  =	hm.entrySet().stream().sorted((a,b)-> a.getValue().compareTo(b.getValue())).map(s-> s.getValue()).collect(Collectors.toList());
+		System.out.println(list);
+		//[Apple, Banana, Grapes, Orange]
     }
 }
 /*
