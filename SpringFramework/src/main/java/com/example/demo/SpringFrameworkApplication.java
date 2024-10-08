@@ -21,6 +21,8 @@ import com.example.demo.singleton.BeanScopeSingletonService;
 
 @SpringBootApplication
 public class SpringFrameworkApplication {
+	
+	
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringFrameworkApplication.class, args);

@@ -16,7 +16,11 @@ public class PrimeNumbers {
 	public static void main(String[] args) {
 		List<Integer> result = primeNumbersTill(100);
 		System.out.println(result);
+		
+		
+		IntStream.rangeClosed(2, (int) (Math.sqrt(100))).forEach(o -> System.out.println(o));
 
 	}
 
 }
+//[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]

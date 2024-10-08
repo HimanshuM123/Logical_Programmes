@@ -12,7 +12,8 @@ public class SumDigits {
 		
 		int sum2 = String.valueOf(number)
 				.chars()
-				.map(u -> Integer.parseInt((u-'0')+""))
+				//.map(u -> Integer.parseInt((u-'0')+""))
+				.mapToObj(u -> Integer.parseInt((u-'0')+""))
 				.reduce(0, (a, b) -> a + b);
 		System.out.println(sum2);
 		

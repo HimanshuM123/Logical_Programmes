@@ -27,7 +27,7 @@ public class EmployeeDepartmentMapper {
 
     public static void main(String[] args) {
         // Sample list of Employee4s
-        List<Employee4> emp = Arrays.asList(
+        List<Employee4> empList = Arrays.asList(
                 new Employee4("John", "HR"),
                 new Employee4("Jane", "IT"),
                 new Employee4("Jack", "HR"),
@@ -36,7 +36,7 @@ public class EmployeeDepartmentMapper {
         );
 
         // Convert List<Employee4> to Map<String, List<String>>
-        Map<String, List<String>> departmentToEmployee4s = emp.stream()
+        Map<String, List<String>> departmentToEmployee4s = empList.stream()
                 .collect(Collectors.groupingBy(
                         Employee4::getDepartment,
                         Collectors.mapping(Employee4::getName, Collectors.toList())
@@ -48,3 +48,8 @@ public class EmployeeDepartmentMapper {
         );
     }
 }
+/*
+Finance: [Doe]
+HR: [John, Jack]
+IT: [Jane, Smith]
+*/
