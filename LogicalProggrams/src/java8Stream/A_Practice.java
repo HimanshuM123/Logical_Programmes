@@ -12,36 +12,20 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class A_Practice {
 	public static void main(String[] args) {
 		
-		
-		
-		Function<String,String> fun = (str)->{
-			return str.toUpperCase();
-		};
-		
-		System.out.println(fun.apply("acsfdfdgdh"));
-		
-		BiFunction<String, String, Integer> BiFun = (a,b)->{
-			return Integer.parseInt(a+b);
-		};
-		
-		System.out.println(BiFun.apply("4", "6"));
-		
-		BinaryOperator<String> BiOp = (str1,str2)->{
-			return str1+str2;
-		};
-		
-		System.out.println(BiOp.apply("a", "bcd"));
-		
-		UnaryOperator<String> u = (str)->{
-			return str.toLowerCase();
-		};
-		
-		System.out.println(u.apply("HUSSHDUDUHSUJ"));
+		boolean result = isPrime(15);
+		System.out.println(result);
 	
+	}
 	
+	private static boolean isPrime(int number) {
+		
+		
+		return IntStream.rangeClosed(2, (int)Math.sqrt(number)).allMatch(n -> number %n !=0);
+		
 	}
 }
