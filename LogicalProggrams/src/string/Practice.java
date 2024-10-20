@@ -1,38 +1,34 @@
 package string;
 
 import java.util.Arrays;
+import java.util.Stack;
 
 public class Practice {
 	public static void main(String[] args) {
-		String s = "abcd";
-		String t = "ahbgdc";
-
-		boolean res = isSubSeq(s, t);
-		System.out.println(res);
-
-	}
-
-	private static boolean isSubSeq(String s, String t) {
-
-		int i = 0;
-		int j = 0;
-
-		while (i < s.length() && j < t.length()) {
-
-			if (s.charAt(i) == t.charAt(j)) {
-				i++;
-				j++;
-			} else {
-				j++;
+		String str = "ab-C-dEf-ghIj";
+		
+		Stack<Character> stk = new Stack();
+		String result ="";
+		
+		for(int i=0 ;i <str.length();i++) {
+			Character ch = str.charAt(i);
+			
+			if(Character.isLetter(ch)) {
+				stk.push(ch);
 			}
-
 		}
-
-		if (i == s.length()) {
-			return true;
+		
+		for(int i=0 ;i <str.length();i++) {
+			Character ch = str.charAt(i);
+			
+			if(Character.isLetter(ch)) {
+				result = result+stk.pop();
+			}else {
+				result = result+ ch;
+			}
 		}
-
-		return false;
+		
+		System.out.println(result);
 
 	}
 

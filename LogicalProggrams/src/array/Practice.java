@@ -9,43 +9,39 @@ import java.util.Stack;
 
 public class Practice {
 	public static void main(String[] args) {
-		
-		Practice solution = new Practice();
+		int[] arr = {  11, 15,2, 7 };// 2,7,11,15
+		int target = 9;
+		int [] indexes = twoSumIndex(arr, target);
+		System.out.println(Arrays.toString(indexes));
 
-	        int[] example1 = {1, 2, 3};
-	        System.out.println("Example 1:");
-	        System.out.println(solution.permutations(example1)); // Output: [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
-
-	        int[] example2 = {0, 1};
-	        System.out.println("Example 2:");
-	        System.out.println(solution.permutations(example2)); // Output: [[0, 1], [1, 0]]
-	    
 	}
 	
-	private  List<List<Integer>> permutations(int[] arr ) {
-		List<List<Integer>> result = new ArrayList<>();
-		List<Integer> solution = new ArrayList<>();
-		dfs(arr,solution,result);
+	public static int []  twoSumIndex(int [] arr , int target) {
+		int [] res = new int[2];
 		
-		return result;
+		Arrays.sort(arr);
 		
-	}
-	
-	private void dfs(int[] arr, List<Integer> solution,List<List<Integer>> result) {
-		if(solution.size()== arr.length) {
-			 result.add(new ArrayList<>(solution));
-			 return;
-		}
+		int left =0;
+		int right = arr.length-1;
 		
-		for(int i =0; i< arr.length; i++) {
-			if(!solution.contains(arr[i])) {
-				solution.add(arr[i]);
-				dfs(arr,solution,result);
-				solution.remove(solution.size()-1);
+		while(left < right) {
+			int sum = arr[left]+arr[right];
+			if(sum > target) {
+				right--;
+			}else if(sum <target) {
+				left++;
+			}else {
+				res[0]=arr[left];
+				res[1]=arr[right];
+				break;
 			}
+			
+			
+			
+			
 		}
 		
-		
+		return res;
 		
 		
 	}
