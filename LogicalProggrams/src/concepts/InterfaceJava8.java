@@ -15,7 +15,7 @@ interface Payment {
 
 class GPay implements Payment {
 
-	// Most need to Override
+	// Must need to Override
 	@Override
 	public void doTransaction() {
 		System.out.println("doTransaction for  GPay");

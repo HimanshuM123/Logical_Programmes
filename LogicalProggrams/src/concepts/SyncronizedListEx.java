@@ -11,15 +11,39 @@ public class SyncronizedListEx {
 		list.add("Java");
 		list.add("Python");
 		list.add("Node");
+		Thread t1 = new Thread(()->{
+			list.add("Cobol");
+		});
+		
+		t1.start();
 		List<String> synchronizedList = Collections.synchronizedList(list);
+		/*
+		Thread t1 = new Thread(()->{
+			synchronizedList.add("Cobol");  java.util.ConcurrentModificationException
+		});
+		
+		*/
 
 		for (String obj : synchronizedList) {
 			System.out.println(obj + " ");
-			synchronizedList.add("C#");
+			//synchronizedList.add("C#");  java.util.ConcurrentModificationException
 		}
 	}
 
 }
+
+/*
+ Java 
+Python 
+Node 
+Cobol 
+ 
+  
+ 
+ */
+
+
+
 //java.util.ConcurrentModificationException
 /*
 Only Synchronized Access, Not Synchronized Iteration: synchronizedList provides 

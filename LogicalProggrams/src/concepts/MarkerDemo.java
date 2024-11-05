@@ -1,5 +1,7 @@
 package concepts;
 
+
+//Serializable , Clonable, Remote
 public class MarkerDemo {
 	public static void main(String[] args) {
 		try {
