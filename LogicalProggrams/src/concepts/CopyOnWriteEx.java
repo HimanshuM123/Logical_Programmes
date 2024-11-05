@@ -29,3 +29,9 @@ public class CopyOnWriteEx {
 	}
 
 }
+
+
+/*
+Only 1 will be printed, as the iterator over the CopyOnWriteArrayList
+ does not reflect modifications made after the iteration begins.
+*/
