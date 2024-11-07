@@ -21,6 +21,12 @@ public class PrintSeqCompFuture {
 					}, executorService);
 
 			oddCompletableFuture.join();
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
 			CompletableFuture<Integer> evenCompletableFuture = CompletableFuture.completedFuture(num)
 					.thenApplyAsync(x -> {

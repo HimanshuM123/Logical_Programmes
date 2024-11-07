@@ -1,6 +1,7 @@
 package concepts;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -10,6 +11,8 @@ public class ConcurrentHmEx2 {
 		ConcurrentHashMap<Integer,String> hm = new ConcurrentHashMap();
 		hm.put(1, "Apple");
 		hm.put(2, "Orange");
+		
+		Iterator itr = hm.keySet().iterator();
 		
 		for(Map.Entry<Integer,String> obj : hm.entrySet()) {
 			hm.put(3, "Modification");
