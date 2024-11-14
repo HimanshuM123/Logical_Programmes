@@ -1,36 +1,26 @@
 package java8Stream;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Practice {
 	public static void main(String[] args) {
-		Map<Integer, String> hm = new HashMap<>();
-		hm.put(4, "Apple");
-		hm.put(2, "Grapes");
-		hm.put(3, "Orange");
-		hm.put(1, "Banana");
+		Employee e1 = new Employee("Suresh",2,900.0);
+		Employee e2 = new Employee("Ramesh",1,700.0);
+		Employee e3 = new Employee("Nikita",3,400.0);
+		Employee e4 = new Employee("Rahul",4,200.0);
 		
+		List<Employee> list = Arrays.asList(e1,e2,e3,e4);
 		
-//		Set<Map.Entry<Integer, String>> set  = hm.entrySet();
-//		List<Map.Entry<Integer, String>>  list = new ArrayList<>(set);
-//		list.sort((a,b)->a.getValue().compareTo(b.getValue()));
-//		
-//		for(Map.Entry<Integer, String> obj : list) {
-//			System.out.println(obj.getKey()+" "+obj.getValue());
-//		}
-		
-		Map<Integer, String> map3  =	hm.entrySet().stream().sorted((a,b)-> a.getValue().compareTo(b.getValue())).collect(Collectors.toMap(p ->p.getKey(), s->s.getValue()));
-		System.out.println(map3);
-		
-		
-		List<String> list  =	hm.entrySet().stream().sorted((a,b)-> a.getValue().compareTo(b.getValue())).map(s-> s.getValue()).collect(Collectors.toList());
-		System.out.println(list);
+	Stream<Employee> stm=	list.stream();
+	System.out.println(stm);
 
 	}
 

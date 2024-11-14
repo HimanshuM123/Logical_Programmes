@@ -1,35 +1,58 @@
 package string;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Stack;
 
 public class Practice {
 	public static void main(String[] args) {
-		String str = "ab-C-dEf-ghIj";
+		 int result = palindromeIndex("abfcddcba");
+		 System.out.println(result);
+
 		
-		Stack<Character> stk = new Stack();
-		String result ="";
+	}
+
+	private static int palindromeIndex(String str) {
+		int left =0;
+		int right =str.length() - 1; 
 		
-		for(int i=0 ;i <str.length();i++) {
-			Character ch = str.charAt(i);
-			
-			if(Character.isLetter(ch)) {
-				stk.push(ch);
-			}
-		}
-		
-		for(int i=0 ;i <str.length();i++) {
-			Character ch = str.charAt(i);
-			
-			if(Character.isLetter(ch)) {
-				result = result+stk.pop();
+		while(left < right) {
+			if(str.charAt(left)!= str.charAt(right)) {
+			boolean res =isPalimdrom(str.substring(left+1,right+1));
+			if(res) {
+				return left;
 			}else {
-				result = result+ ch;
+				return right;
 			}
-		}
+			}
 		
-		System.out.println(result);
+			
+			left ++;
+			right--;
+		}
+	
+
+		return -1;
 
 	}
 
+	private static boolean isPalimdrom(String str) {
+
+		int left = 0;
+		int right = str.length() - 1;
+		while (left < right) {
+
+			if (str.charAt(right) != str.charAt(left)) {
+				return false;
+			}
+
+			left++;
+			right--;
+		}
+
+		return true;
+
+	}
 }
