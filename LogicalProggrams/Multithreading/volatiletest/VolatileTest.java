@@ -1,36 +1,27 @@
 package volatiletest;
 
 
-
 public class VolatileTest {
-	  boolean flag = true;
+    private static volatile boolean stopThread = false;
 
-	private void test(boolean flag1) {
-		this.flag = flag1;
-		while (flag) {
-			System.out.println("running loop...");
-		}
-	}
+    public static void main(String[] args) throws InterruptedException {
+        Thread workerThread = new Thread(() -> {
+            while (!stopThread) {
+                System.out.println("Working...");
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+            }
+            System.out.println("Thread stopped.");
+        });
 
-	public static void main(String[] args) {
-		VolatileTest obj = new VolatileTest();
-		Thread t1 = new Thread(() -> {
-			System.out.println("Thread 1 started");
-			obj.test(true);
-		});
+        workerThread.start();
 
-		Thread t2 = new Thread(() -> {
-			System.out.println("Thread 2 started");
-			try {
-				Thread.sleep(10);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-			obj.test(false);
-		});
-
-		t1.start();
-		t2.start();
-
-	}
+        // Main thread sleeps for 2 seconds, then stops the worker thread
+        Thread.sleep(2000);
+        stopThread = true; // This update is visible to the worker thread
+        System.out.println("Stop signal sent.");
+    }
 }

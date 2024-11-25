@@ -8,13 +8,14 @@ public class CountDownLatchExample {
         CountDownLatch latch = new CountDownLatch(threadCount);
 
         for (int i = 0; i < threadCount; i++) {
-            new Thread(() -> {
+          Thread t=  new Thread(() -> {
                 try {
                     System.out.println(Thread.currentThread().getName() + " finished task.");
                 } finally {
                     latch.countDown();
                 }
-            }).start();
+            });
+          t.start();
         }
 
         // Main thread waits until the latch reaches zero
