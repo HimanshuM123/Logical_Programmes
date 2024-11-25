@@ -6,10 +6,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class Practice {
+public class Practice2 {
 
-	static String str = "abcdefghijklmnop";
-	static int index = 0;
+	static int index = 1;
 	static Object lock = new Object();
 
 	public static void main(String[] args) {
@@ -30,25 +29,18 @@ public class Practice {
 				e.printStackTrace();
 			}
 		});
-		Thread t3 = new Thread(() -> {
-			try {
-				printSeq(2);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		});
+	
 		t1.start();
 		t2.start();
-		t3.start();
+		
 
 	}
 
 	private static void printSeq(int threadIndex) throws InterruptedException {
-		while(index < str.length()) {
+		while(index < 20) {
 			synchronized (lock) {
-				if(index %3==threadIndex) {
-					System.out.println(str.charAt(index)+"   "+Thread.currentThread());
+				if(index %2==threadIndex) {
+					System.out.println(index+"   "+Thread.currentThread());
 					index++;
 					lock.notifyAll();
 				}else {
