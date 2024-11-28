@@ -10,14 +10,18 @@ import java.util.stream.Collectors;
 public class Practice {
 	public static void main(String[] args) {
 		
-		List<String> items = Arrays.asList("apple", "banana", "apple", "orange", "banana", "apple");
+		String str = "abcdacd";
 		
-		String res=
-		items.stream().collect(Collectors.groupingBy(c -> c, Collectors.counting())).entrySet()
+		List<String> res=
+		str.chars()
+		.mapToObj(c->(char)c)
+		.collect(Collectors.groupingBy(a -> a, Collectors.counting()))
+		.entrySet()
 		.stream()
-		.max((x,y)-> Long.compare(x.getValue(), y.getValue()))
-		.map(obj -> obj+"")
-		.get();
+		.filter(obj -> obj.getValue()==1)
+		.map(k -> k.getKey()+"")
+		.collect(Collectors.toList());
+		
 		
 		System.out.println(res);
 		
