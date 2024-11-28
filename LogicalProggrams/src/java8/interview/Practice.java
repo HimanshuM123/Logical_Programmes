@@ -10,10 +10,18 @@ import java.util.stream.Collectors;
 public class Practice {
 	public static void main(String[] args) {
 		
-		int number = 47932;
+		List<String> items = Arrays.asList("apple", "banana", "apple", "orange", "banana", "apple");
 		
-		String res =String.valueOf(number).chars().mapToObj(c->(char)c).sorted((a,b)->-1).map( v -> v+"").collect(Collectors.joining());
-	System.out.println(res);
+		String res=
+		items.stream().collect(Collectors.groupingBy(c -> c, Collectors.counting())).entrySet()
+		.stream()
+		.max((x,y)-> Long.compare(x.getValue(), y.getValue()))
+		.map(obj -> obj+"")
+		.get();
+		
+		System.out.println(res);
+		
+		
 	}
 
 }
