@@ -5,65 +5,22 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Practice {
-
-	static String str = "abcdefghijklmnop";
-	static int index = 0;
-	static Object lock = new Object();
-
+	//static Integer count =0;
+	static AtomicInteger count = new AtomicInteger(1);
 	public static void main(String[] args) {
 
-		Thread t1 = new Thread(() -> {
-			try {
-				printSeq(0);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		});
-		Thread t2 = new Thread(() -> {
-			try {
-				printSeq(1);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		});
-		Thread t3 = new Thread(() -> {
-			try {
-				printSeq(2);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		});
-		t1.start();
-		t2.start();
-		t3.start();
-
-	}
-
-	private static void printSeq(int threadIndex) throws InterruptedException {
-		while(index < str.length()) {
-			synchronized (lock) {
-				if(index %3==threadIndex) {
-					System.out.println(str.charAt(index)+"   "+Thread.currentThread());
-					index++;
-					lock.notifyAll();
-				}else {
-					lock.wait();
-				}
-				
-			}
-			
-			
+		
+		ExecutorService ex = Executors.newFixedThreadPool(10);
+		
+		
+		for(int i=0 ;i<10;i++) {
+			ex.submit(()->{
+				System.out.print(count.getAndIncrement() +" ");
+			});
 		}
-		
-		
-		
-		
-		
-
 	}
+
 }

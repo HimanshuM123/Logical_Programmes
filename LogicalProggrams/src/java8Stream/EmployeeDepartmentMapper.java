@@ -55,10 +55,7 @@ public class EmployeeDepartmentMapper {
 		
 		
 
-		
-		Map<Integer, String> map3  =	hm.entrySet().stream().sorted((a,b)-> a.getValue().compareTo(b.getValue())).collect(Collectors.toMap(p ->p.getKey(), s->s.getValue()));
-		System.out.println(map3);
-		//{1=Banana, 2=Grapes, 3=Orange, 4=Apple}
+
 		
 		List<String> list  =	hm.entrySet().stream().sorted((a,b)-> a.getValue().compareTo(b.getValue())).map(s-> s.getValue()).collect(Collectors.toList());
 		System.out.println(list);
