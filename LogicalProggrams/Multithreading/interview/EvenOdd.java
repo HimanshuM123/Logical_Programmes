@@ -5,13 +5,11 @@ public class EvenOdd {
 	static Object lock = new Object();
 
 	public static void main(String[] args) {
-
 		Thread t1 = new Thread(() -> printEvenOdd(0));
 		Thread t2 = new Thread(() -> printEvenOdd(1));
 
 		t1.start();
 		t2.start();
-
 	}
 
 	private static void printEvenOdd(int threadIndex) {
@@ -30,9 +28,6 @@ public class EvenOdd {
 					}
 				}
 			}
-
 		}
-
 	}
-
 }
