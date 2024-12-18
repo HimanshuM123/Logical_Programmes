@@ -14,11 +14,14 @@ public class HashMapHashCodeOnly {
 		hm.put(emp1, "One");
 		hm.put(emp2, "Two");
 		
-		System.out.println("Both Objects are Equal: "+emp1.equals(emp2));
-		System.out.println("Employee 1 Hashcode: "+emp1.hashCode());
-		System.out.println("Employee 2 Hashcode: "+emp2.hashCode());
+		System.out.println("Both Objects are Equal: "+emp1.equals(emp2)); //false
+		System.out.println("Employee 1 Hashcode: "+emp1.hashCode()); //79461
+		System.out.println("Employee 2 Hashcode: "+emp2.hashCode()); //79461
 		hm.forEach((k, v) -> System.out.println("Key is: " + k + " Value is: " + v));
-		System.out.println("Size "+hm.size());
+		//Key is: concepts.Employee@13665 Value is: One
+		//Key is: concepts.Employee@13665 Value is: Two
+		System.out.println("Size "+hm.size());//2
+		//size =1 if I override equals method
 	}
 
 }
