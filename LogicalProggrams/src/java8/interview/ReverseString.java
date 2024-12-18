@@ -10,11 +10,10 @@ import java.util.stream.Collectors;
 public class ReverseString {
 	public static void main(String[] args) {
 		
-		int number = 12345;
-		Integer sum =
-		String.valueOf(number).chars().mapToObj(c ->(char)c).map(i -> Integer.parseInt(i+"")).reduce((a,b)-> a+b).get();
+		String str ="ReverseMe";
 		
-		System.out.println(sum);
+		String result =str.chars().mapToObj(c -> (char)c).sorted((a,b)-> -1).map(s -> s+"").collect(Collectors.joining());
+		System.out.println(result);
 	}
 
 }
