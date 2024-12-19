@@ -13,6 +13,9 @@ public class LongestString {
 		                          .orElse(null);
 
 		System.out.println("Longest word: " + longestWord);  // Output: banana
+		
+		String longestWord2 =	words.stream().max((a,b)-> a.length()-b.length()).get();
+		System.out.println("Longest word: " + longestWord2);  // Output: banana
 
 	}
 
