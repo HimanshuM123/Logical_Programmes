@@ -8,51 +8,42 @@ import java.util.Stack;
 
 public class Practice {
 	public static void main(String[] args) {
-		 int result = palindromeIndex("abfcddcba");
-		 System.out.println(result);
-
+		String str ="loveleetcode";
+		String result = firstUniqChar(str);
+		System.out.println(result);
 		
 	}
 
-	private static int palindromeIndex(String str) {
-		int left =0;
-		int right =str.length() - 1; 
-		
-		while(left < right) {
-			if(str.charAt(left)!= str.charAt(right)) {
-			boolean res =isPalimdrom(str.substring(left+1,right+1));
-			if(res) {
-				return left;
-			}else {
-				return right;
-			}
-			}
-		
-			
-			left ++;
-			right--;
-		}
-	
+	private static String firstUniqChar(String str) {
 
-		return -1;
+		String result = "";
 
-	}
+		Map<Character, Integer> hm = new LinkedHashMap<>();
 
-	private static boolean isPalimdrom(String str) {
+		for (int i = 0; i < str.length(); i++) {
 
-		int left = 0;
-		int right = str.length() - 1;
-		while (left < right) {
-
-			if (str.charAt(right) != str.charAt(left)) {
-				return false;
+			Character ch = str.charAt(i);
+			if (hm.get(ch) == null) {
+				hm.put(ch, 1);
+			} else {
+				hm.put(ch, hm.get(ch) + 1);
 			}
 
-			left++;
-			right--;
 		}
 
-		return true;
+		for (Map.Entry<Character, Integer> obj : hm.entrySet()) {
+
+			if (obj.getValue() == 1) {
+				result = obj.getKey().toString();
+				break;
+			}
+		}
+
+		System.out.println(hm);
+
+		return result;
 
 	}
+
+
 }

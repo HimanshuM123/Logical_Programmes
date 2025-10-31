@@ -18,7 +18,7 @@ public class PermuteString2 {
 			String left = str.substring(0, i);
 			String right = str.substring(i + 1);
 			String result = left + right;
-			System.out.println(result);
+			//System.out.println(result);
 			generatePermute(result, asf + ch);
 
 		}
