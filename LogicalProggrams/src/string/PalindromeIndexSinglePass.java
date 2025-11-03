@@ -25,8 +25,10 @@ public class PalindromeIndexSinglePass {
     }
 
     public static void main(String[] args) {
-        System.out.println(palindromeIndex("bcbc")); // 0 or 3
-        System.out.println(palindromeIndex("aaab")); // 3
-        System.out.println(palindromeIndex("racecar")); // -1
+//        System.out.println(palindromeIndex("bcbc")); // 0 or 3
+//        System.out.println(palindromeIndex("aaab")); // 3
+//        System.out.println(palindromeIndex("racecar")); // -1
+    //	 System.out.println(palindromeIndex("abcdceba"));
+    	 System.out.println(palindromeIndex("acbcdcba"));
     }
 }
