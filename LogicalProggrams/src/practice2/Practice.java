@@ -17,33 +17,21 @@ import java.util.function.Supplier;
 
 public class Practice {
 	public static void main(String[] args) {
-	
-	Predicate<Integer> p = (i) -> {
-		return i%2==0;
-	}	;
-	
-	boolean result =p.test(4);
-	System.out.println(result);
-	
-	Consumer<String> c = (con)->{
-		System.out.println(con);
-	};
+		int num = 12321;
+		int original = num;
+		int sum =0;
 		
-	c.accept("Hi..consumer");
-	
-	Supplier<String> sup =()->{
-		return "Supplier....";
-	};
-	
-	String su = sup.get();
-	System.out.println(su);
-	
-	Function<Integer, String> fun = (i)->{
-		return String.valueOf(i);
-	};
-	
-	System.out.println(fun.apply(6));
-	
-	
+		
+		while(num >0) {
+			sum  = sum*10 + num%10;
+			num= num/10;
+		}
+		
+		if(sum ==original) {
+			System.out.println("The number is palimdrom");
+		}else {
+			System.out.println("NOT");
+		}
+		
 	}
 }

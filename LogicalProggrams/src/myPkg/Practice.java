@@ -13,24 +13,32 @@ import java.util.stream.Collectors;
 public class Practice {
 
 	public static void main(String[] args) {
-		Map<Integer, String> hm = new HashMap<>();
-		hm.put(1, "Mango");
-		hm.put(2, "Banana");
-		hm.put(3, "Orange");
-		hm.put(4, "Apple");
-		
-	List<Map.Entry<Integer, String>> list =	hm.entrySet().stream().sorted((a,b)-> a.getValue().compareTo(b.getValue())).collect(Collectors.toList());
+		int[] arr = { 7, 1, 5, 3, 6, 4 };
+		int result = maxProfit(arr);
+		System.out.println(result);
+	}
 	
-	list.stream().forEach((obj)-> System.out.println(obj.getKey()+" "+obj.getValue()));
+
+	private static int maxProfit(int[] arr) {
+		int maxProfit = 0;
+
+		int left = 0;
+		int right = 1;
+
+		while (right < arr.length) {
+			if(arr[left]< arr[right]) {
+				int diff = arr[right] - arr[left];
+				maxProfit = Math.max(maxProfit, diff);
+				
+			}else {
+				left =right;
+			}
+			
+			right++;
+		}
+
+		return maxProfit;
+
 	}
 
 }
-
-/*
- * 
- * j=0 a=1 v=2 a=3
- * 
- * 
- * 
- * 
- */
