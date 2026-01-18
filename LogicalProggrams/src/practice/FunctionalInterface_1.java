@@ -9,35 +9,31 @@ public class FunctionalInterface_1 {
 
 	public static void main(String[] args) {
 		// predicate
-		Predicate<Integer> p = (i) -> {
-			return i % 2 == 0;
-		};
-
-		System.out.println(p.test(8));
+		Predicate<Integer> p =(i)-> i%2==0;
+		
+		System.out.println(p.test(7));
+			
 
 		// consumer
+		
+		Consumer<String>  c=(str)-> System.out.println(str);
+		c.accept("this is consumer");
 
-		Consumer<String> c = (s) -> {
-			System.out.println(s);
-		};
-		c.accept("consumer");
+		
 		
 		//supplier
 		
-		Supplier<String> s = ()-> {
-			return "I am supplier";
-		};
-		System.out.println(s.get());
+		Supplier<String> s =()->"Supplier";
+		String result = s.get();
+		System.out.println(result);
+		
 		//Function
 		
-		Function<String, String> f = (fun)->{
-			return fun.toUpperCase();
-		};
+		Function<String, String> fun =(str)-> str.toUpperCase();
+		System.out.println(fun.apply("abcd"));
+
 		
-		Function<String,String> f1 =String::toUpperCase;
 		
-		System.out.println(f.apply("function"));
-		System.out.println(f1.apply("function1"));
 	}
 
 }
