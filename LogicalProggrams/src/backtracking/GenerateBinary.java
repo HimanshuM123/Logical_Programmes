@@ -2,7 +2,7 @@ package backtracking;
 
 public class GenerateBinary {
 	public static void main(String[] args) {
-		generateBinary(2,"");
+		generateBinary(3,"");
 	}
 	
 	
