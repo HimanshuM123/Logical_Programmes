@@ -15,6 +15,14 @@ public class Instrument {
 		this.strike = strike;
 		this.callPut = callPut;
 	}
+	
+	public Instrument( String symbol) {
+		super();
+	
+		this.symbol = symbol;
+		
+	}
+	
 	public String getType() {
 		return type;
 	}

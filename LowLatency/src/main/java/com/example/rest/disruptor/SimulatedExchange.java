@@ -1,4 +1,4 @@
-
+package com.example.rest.disruptor;
 
 
 import java.util.concurrent.ConcurrentHashMap;
@@ -9,8 +9,8 @@ import java.util.Map;
 public class SimulatedExchange {
     private final String name;
     private final WebSocketHandlerImpl wsHandler;
-    private final Map<String, PriorityBlockingQueue<Order>> buyBook = new ConcurrentHashMap<>();
-    private final Map<String, PriorityBlockingQueue<Order>> sellBook = new ConcurrentHashMap<>();
+    public final Map<String, PriorityBlockingQueue<Order>> buyBook = new ConcurrentHashMap<>();
+    public final Map<String, PriorityBlockingQueue<Order>> sellBook = new ConcurrentHashMap<>();
 
     public SimulatedExchange(String name, WebSocketHandlerImpl wsHandler){
         this.name = name;
@@ -26,7 +26,8 @@ public class SimulatedExchange {
             )
         ).add(order);
 
-        new Thread(() -> matchOrders(order.getInstrument().getSymbol())).start();
+//        new Thread(() -> matchOrders(order.getInstrument().getSymbol())).start();
+        matchOrders(order.getInstrument().getSymbol());
     }
 
     private void matchOrders(String symbol){

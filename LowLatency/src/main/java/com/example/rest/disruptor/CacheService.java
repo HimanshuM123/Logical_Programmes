@@ -1,7 +1,5 @@
 package com.example.rest.disruptor;
 
-import java.io.IOException;
-
 import net.openhft.chronicle.map.ChronicleMap;
 
 public class CacheService {

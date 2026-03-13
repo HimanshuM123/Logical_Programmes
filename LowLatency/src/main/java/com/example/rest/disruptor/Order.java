@@ -14,7 +14,10 @@ public class Order {
     private long timestamp;
     private String status;
 
-    public Order(String clientOrderId, Instrument instrument, String side, int qty, Double price, String ordType, long timestamp){
+ 
+  
+
+	public Order(String clientOrderId, Instrument instrument, String side, int qty, Double price, String ordType, long timestamp){
         this.orderId = "O-" + counter.getAndIncrement();
         this.clientOrderId = clientOrderId;
         this.instrument = instrument;
