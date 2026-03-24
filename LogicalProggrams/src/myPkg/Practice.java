@@ -13,31 +13,54 @@ import java.util.stream.Collectors;
 public class Practice {
 
 	public static void main(String[] args) {
-		int[] arr = { 7, 1, 5, 3, 6, 4 };
-		int result = maxProfit(arr);
-		System.out.println(result);
-	}
-	
-
-	private static int maxProfit(int[] arr) {
-		int maxProfit = 0;
-
-		int left = 0;
-		int right = 1;
-
-		while (right < arr.length) {
-			if(arr[left]< arr[right]) {
-				int diff = arr[right] - arr[left];
-				maxProfit = Math.max(maxProfit, diff);
-				
-			}else {
-				left =right;
-			}
-			
-			right++;
+		Practice p = new Practice();
+		Thread t1 = new Thread(() -> {
+			p.printEvenOdd(0);
 		}
 
-		return maxProfit;
+		);
+		Thread t2 = new Thread(() -> {
+			p.printEvenOdd(1);
+		}
+
+		);
+		
+		t1.start();
+		t2.start();
+
+	}
+
+	int limit =20;
+	int i=0;
+	
+	Object lock = new Object();
+	private void printEvenOdd(int num)  {
+		
+		while(i <limit) {
+			
+			synchronized (lock) {
+				if(i %2==num) {
+					System.out.println(i+"   "+Thread.currentThread());
+					i++;
+					
+						lock.notifyAll();
+					
+				}else {
+					System.out.println(i+"   "+Thread.currentThread());
+					try {
+						lock.wait();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+				
+				
+			}
+			
+			
+			
+		}
 
 	}
 
