@@ -1,0 +1,136 @@
+1.
+Rehashing:
+
+Rehashing is the process of increasing the size of a hashmap and redistributing the elements to new buckets based on their new hash values. 
+It is done to improve the performance of the hashmap and to prevent collisions caused by a high load factor.
+
+2.
+can stringbuilder be hashmap key ?
+StringBuilder/Buffer is also mutable which is generally not a good idea to use as a key for a HashMap since storing the value under
+ it can cause the value to be inaccessible after modification. 
+StringBuilder uses Object 's default hashcode() implementation, whereas Strings are compared by value for the map keys
+
+
+3.
+how long does heap memory and stack memory live in java
+-Stack memory is short-lived whereas heap memory lives from the start till the end of application execution
+
+4.What if HashMap hashcode() returns same value
+A hashcode() that always returns the same value is valid but not very effective. 
+In this case the comparison will always return true, so the equals() method will always be executed. There is no performance improvement in this case.  
+
+5.
+If the parent class is Serializable by default all the child classes also Serializable. 
+i.e Serializable nature is inherited from parent to child.
+
+6.How to exclude configuration file in Spring Boot?
+You can always manually exclude() any configuration that you never want to apply (use excludeName() 
+if you don't have access to them). You can also exclude them through the spring. autoconfigure. exclude property.
+
+7. What is the purpose of a static method in interface from Java 8?
+The reason is that we can call the static method by interface name and that static method can call the default method internally. 
+Example: Comparator::comparing, so here comparing is calling the default functionalities.
+
+8. Load external properties files
+spring.config.import = file://Users/Desktop/test.properties
+
+@PropertySource(value = "classpath:aaa.properties")
+
+9.
+which file is loaded first application.properties or   application.yml
+->application.properties
+
+10.Springbeans real-time use
+- Singleton :
+    1. Database configuration - DB connection pool
+    2.Service Layer - stateless service which doesnt contain any mutable state
+    3.Application configuration - settings througout application
+- Prototype:
+    1.User session 
+    2.Thread safety- Threads can create multiple instances 
+    3.Heavy initialization
+
+
+11. Can we execute @Putmapping logic inside @PostMapping
+--YES,  but it will violate the principle of Restful design
+Not recommended
+@PostMapping -> not-idepotent -- resource is not modified-- when we hit multiple requests it will save in DB multiple times
+@Putmapping -> idepotent -- resource is  modified - in DB no new resource added
+if we execute update logic in @Postmapping it will create new resource in DB every time
+
+12. Can we pass @RequestBody in @GetMapping?
+Yes, possible but not recommended
+
+13.@Controller vs @RestController
+@Restcontroller = @Controller + @ResponseBody
+if we define only @Controller spring will resolve it as HTML page , inorder to return json or text response we can use
+@ResponseBody along with ( @GetMapping (value ="/test" produces = MediaType.TEXT_PLAIN or JSON)
+
+14.
+REST vs RESTful
+there are no differences between REST and RESTful as far as APIs are concerned. 
+REST is the set of constraints. RESTful refers to an API adhering to those constraints. 
+It can be used in web services, applications, and software.
+
+15.
+Technology |	Used in Project |	Latest Version
+--------------------------------------------------
+Java			JDK17			|	JDK22
+SpringBoot		3	            |   3
+Oracle			19c				|   19c
+Cassandra	    4.1             |	5
+Angular	        10				|   18
+Node			v20.16.0 	    |   v22.5.1
+NPM	            10.7.0			|   10.7.0
+ReactJS	         17 			|	18
+HTML	         5				|   5
+CSS	             3				|   3
+
+
+16.
+Resttemplate methods
+ public UserData getUserData()
+    {
+        return rest.getForObject(
+            "http://localhost:8080/RestApi/getData",
+            UserData.class);
+    }
+ 
+    // Method
+    public ResponseEntity<UserData> post(UserData user)
+    {
+        return rest.postForEntity(
+            "http://localhost:8080/RestApi", user,
+            UserData.class, "");
+    }
+    
+GET
+getForEntity()
+getForObject() 
+
+POST
+postForEntity() 
+postForLocation()
+postForObject() 
+
+PATCH
+patchForObject()
+
+ANY
+exchange() 
+execute()
+
+DELETE
+delete()
+
+
+17.
+is singleton class thread safe
+No, a singleton class is not inherently thread-safe, and explicit steps must be taken to make it so. Thread safety is important for singleton classes in multi-threaded environments. 
+ 
+Here are some ways to make a singleton class thread-safe: 
+ 
+Java
+Create the instance variable at class loading, synchronize the getInstance() method, or use a synchronized block inside the if loop and volatile variable
+
+
