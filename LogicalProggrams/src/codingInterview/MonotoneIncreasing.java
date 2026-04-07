@@ -1,14 +1,13 @@
 package codingInterview;
 
-
 /*
+ * 30/200
       ^     ^    
  {0,1,0,1,1,0}->{0,1,1,1,1,1}  2 flips 
  
  */
 public class MonotoneIncreasing {
 	public static void main(String[] args) {
-		
 		String s = "010110";
 		int result = minFlips(s);
 		System.out.println(result);
