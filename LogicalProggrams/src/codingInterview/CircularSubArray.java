@@ -25,6 +25,8 @@ public class CircularSubArray {
 
 			currMin = Math.min(currMin, 0) + num;
 			minSum = Math.min(minSum, currMin);
+			
+			System.out.println("currMax "+currMax+" maxSum"+maxSum+" "+"currMin "+currMin+" minSum"+minSum);
 
 			totalSum = totalSum + num;
 
