@@ -7,60 +7,36 @@ import java.util.List;
 public class Practice {
 	
 	public static void main(String[] args) {
-		String [] arr = {"bella","label","roller"};
-		List<String> res =commonChars(arr);
-		System.out.println(res);
+		int[] arr = { 5, 7, 3, 8, 9 };
+		int result = partitionDisjoint(arr);
+
+		System.out.println(result);
 	}
 	
 	
-	
-	
-	private static List<String> commonChars(String [] arr){
-		List<String> res =new ArrayList<>();
+	private static int partitionDisjoint(int [] arr) {
+		int ans =1;
+		int leftMaxSoFar=arr[0];
+		int maxSofar=arr[0];
 		
-		int [] min_freq = new int[26];
-		Arrays.fill(min_freq, Integer.MAX_VALUE);
-		
-		System.out.println(Arrays.toString(min_freq));
-		
-		
-		for(String obj: arr ) {
-			int [] fre_arr =  new int[26];
-			
-			for(int i=0; i< obj.length(); i++) {
-				fre_arr[obj.charAt(i)-'a']++;
-			}
-		//	System.out.println(Arrays.toString(fre_arr));
-			
-			for(int i=0; i<26;i++) {
-				min_freq[i]= Math.min(min_freq[i],fre_arr[i]);
-						
-			}
-			System.out.println(Arrays.toString(min_freq));
-		}
-		
-		
-		for(int i=0; i<26;i++) {
-			while(min_freq[i]>0) {
-				res.add(""+(char)(i+'a'));
-				min_freq[i]--;
+		for(int i=1; i< arr.length; i++) {
+			maxSofar = Math.max(maxSofar,  arr[i]);
+			if(arr[i]< leftMaxSoFar) {
+				ans = i + 1;
+				leftMaxSoFar =maxSofar;
 			}
 		}
+	
+		return ans;
 		
 		
 		
 		
 		
-		return res;
 	}
+	
+	
 
 }
 
 
-
-
-
-
-
-
-//["bella","label","roller"] => ["e","l","l"]
