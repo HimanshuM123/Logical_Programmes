@@ -22,3 +22,15 @@ public class SubsetString {
 	}
 
 }
+
+/*
+
+                           ("", index=0)
+                         /                \
+                exclude 'a'             include 'a'
+               ("",1)                  ("a",1)
+              /      \               /        \
+       exclude 'b' include 'b'  exclude 'b' include 'b'
+         ("",2)     ("b",2)      ("a",2)     ("ab",2)
+
+*/
