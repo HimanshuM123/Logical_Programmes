@@ -39,9 +39,9 @@ public class ProductExceptSelf {
 }
 /*
 
-1,  2,   3,   4
-1,  1,   2,   6
-24  12,  4,   1
+1,  2,   3,   4 arr
+1,  1,   2,   6 ans
+24  12,  4,   1 right
 24  12   8    6  =ans
 
 

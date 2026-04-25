@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.Set;
 import java.util.Stack;
 import java.util.stream.Collectors;
@@ -13,35 +14,28 @@ import java.util.stream.Stream;
 public class Practice {
 	public static void main(String[] args) {
 		
-		int[] arr = { 10, 20, 30, 40, 50, 60, 70 };
-		int n = arr.length;
-		int k = 4;
+		int[] arr = { 4, 8, 1, 2, 0, 5, 9 };// 5,8,9
 		
-		reverse(0,n-1, arr);
-		reverse(0,k-1, arr);
-		reverse(k,n-1, arr);
+		int k=3;
 		
+		PriorityQueue<Integer> pq = new PriorityQueue<>();
 		
-		System.out.println(Arrays.toString(arr));
-		
-		
-
-	}
-	
-	private static  int [] reverse(int start, int end,int [] arr) {
-		while(start<=end) {
-			
-			int temp=0;
-			temp=arr[start];
-			arr[start]=arr[end];
-			arr[end]=temp;
-			
-			start++;
-			end--;
+		for(int i=0; i<k;i++) {
+			pq.add(arr[i]);
 		}
-		return arr;
+		
+		for(int i=k; i<arr.length;i++) {
+			if(arr[i]>pq.peek()) {
+				pq.remove();
+				pq.add(arr[i]);
+			}
+		}
+		
+		System.out.println(pq);
 		
 		
+		
+
 	}
 	
 	
@@ -50,7 +44,6 @@ public class Practice {
 			
 	
 	
-	//10, 20, 30, 40, 50, 60, 70 =>  40,50,60,70,10, 20, 30
-
+	
 }
 
