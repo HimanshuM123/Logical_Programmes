@@ -12,7 +12,7 @@ public class WordPattern {
 		
 		boolean result =wordPattern(pattern,s);
 		
-		System.out.println(result);
+		 System.out.println(result);
 
 	}
 
